@@ -1,0 +1,26 @@
+1、首先，我们创建dev分支，然后切换到dev分支：
+$ git checkout -b dev
+
+2、然后，用git branch命令查看当前分支：
+$ git branch
+
+3、提交：
+$ git add readme.txt 
+$ git commit -m "branch test"
+$ git status
+
+
+
+4、现在，dev分支的工作完成，我们就可以切换回master分支：
+$ git checkout master
+
+5、现在，我们把dev分支的工作成果合并到master分支上：
+$ git merge dev
+
+6、合并完成后，就可以放心地删除dev分支了：
+$ git branch -d dev
+
+7、最重要一步，提交到远程版本
+$ git push [远程版本] dev
+
+
