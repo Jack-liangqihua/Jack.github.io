@@ -1,0 +1,5 @@
+学习了内表。
+1、hash table 		sort table 		standard table .
+2、学习了三种内表的读取，更新，创建。
+3、比较了三种表之间的读写效率、技巧。
+
