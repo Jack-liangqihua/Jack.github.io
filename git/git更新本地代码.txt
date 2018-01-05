@@ -1,0 +1,46 @@
+1、查看远程分支
+$ git remote -v
+
+显示如下：
+ABAP_CODER      git@github.com:Jack-liangqihua/Jack.github.io.git (fetch)
+ABAP_CODER      git@github.com:Jack-liangqihua/Jack.github.io.git (push)
+
+
+2、从远程获取最新版本到本地
+$ git fetch ABAP_CODER master:temp
+
+
+Enter passphrase for key '/c/Users/Administrator/.ssh/id_rsa':
+
+
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From github.com:Jack-liangqihua/Jack.github.io
+ * [new branch]      master     -> temp
+   e1f3a5e..17c7ca5  master     -> ABAP_CODER/master
+   
+3、比较本地仓库与下载的temp分支
+$ git diff temp
+
+
+4、合并temp分支到本地的master分支
+$ git merge temp
+
+
+Updating e1f3a5e..17c7ca5
+Fast-forward
+ diary/diary-20180105.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 diary/diary-20180105.txt
+
+
+
+5、删除temp分支
+$ git branch -d temp
+
+
+Deleted branch temp (was 17c7ca5).
+
+
