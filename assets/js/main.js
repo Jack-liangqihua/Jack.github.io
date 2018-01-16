@@ -6,7 +6,7 @@
 
 (function($) {
 
- var htmlobj=$.ajax({url:"/Menu.txt",async:false});
+ var htmlobj=$.ajax({url:"Menu.txt",async:false});
   $("#menu").html(htmlobj.responseText);
   window.alert(htmlobj.responseText);
 	skel.breakpoints({
