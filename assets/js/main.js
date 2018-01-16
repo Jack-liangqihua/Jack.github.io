@@ -8,7 +8,7 @@
 
  var htmlobj=$.ajax({url:"Menu.txt",async:false});
   $("#menu").html(htmlobj.responseText);
-  window.alert(htmlobj.responseText);
+  
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',

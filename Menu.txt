@@ -1,10 +1,10 @@
 									<header class="major">
-										<h2>Menu</h2>
+										<h2>导航</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="index.html">主页</a></li>
+										<li><a href="generic.html">模版</a></li>
+										<li><a href="elements.html">元素</a></li>
 										<li>
 											<span class="opener">Submenu</span>
 											<ul>
