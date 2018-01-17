@@ -2,8 +2,7 @@
 										<h2> 导 航 菜 单 </h2>
 									</header>
 									<ul>
-										<li><a href="index.html">主页</a></li>
-										<li><a href="generic.html">模版</a></li>										
+										<li><a href="index.html">主页</a></li>										
 										<li>
 											<span class="opener">SAP集成方案</span>
 											<ul>
@@ -16,11 +15,17 @@
 										<li>
 											<span class="opener">SAP技术分享</span>
 											<ul>
-												<li><a href="#">内表</a></li>
+												<li><a href="basis.html">系统基础知识</a></li>
 												<li><a href="#">BAPI</a></li>
 												<li><a href="#">接口</a></li>
 												<li><a href="#">PI系统</a></li>
 											</ul>
 										</li>
-										<li><a href="elements.html">元素</a></li>
+										<li>
+											<span class="opener">工具</span>
+											<ul>
+												<li><a href="elements.html">元素</a></li>
+												<li><a href="generic.html">模版</a></li>
+											</ul>
+										</li> 
 									</ul>
