@@ -12,22 +12,20 @@
   
 //搜索
 $("#query").keyup(function () {
-	var qv =  $("#query").val();
-	  var key=[];
-               $('#menu').each(function () {
-                    $(this).find('li').each(function() {
-                      var tmp = $(this).text();    
-					  if(tmp.indexOf(qv)){                 
-                      	key.push($(this).text());
-					  }
-                    });
-
-                 });
-                 //遍历该数组可以获取所有值
-                 for (var i = 0 ; i < key.length; i++) {
-                      //todo
-					  console.log(key);
-                 }
+	var qv =  $("#query").val(); 
+	if(qv !=null && qv!=""){
+	    $("#menu").html(htmlobj.responseText);
+      	var $menu = $('#menu'); 
+		var $menu_li = $menu.children('ul').children('li');
+		
+		$menu_li.each(function() {
+	  		var txt = $(this).text();                
+			if (txt.match(qv) != null) 
+			{ 
+				$("#menu").html($(this)); 
+			}			
+		});
+	}
            
 	 
 	 
@@ -284,8 +282,8 @@ $("#query").keyup(function () {
 					});
 
 		// Menu.
-			var $menu = $('#menu'),
-				$menu_openers = $menu.children('ul').find('.opener');
+			var $menu = $('#menu'), 
+			$menu_openers = $menu.children('ul').find('.opener');
 
 			// Openers.
 				$menu_openers.each(function() {
