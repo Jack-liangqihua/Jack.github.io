@@ -11,7 +11,7 @@
   $("#menu").html(htmlobj.responseText);
   
 //搜索
-$("#query").keyup(function () {
+$("#query").bind('input propertychange', function() {
 	var qv =  $("#query").val(); 
 	if(qv !=null && qv!=""){
 	    $("#menu").html(htmlobj.responseText);
