@@ -3,20 +3,6 @@
 
 
 
-1、ABAP Objects ABAP Dictionary  3day
-2、Programming ABAP Reports  3day
-3、Programming Database Changes 2day
-4、Developing Screen-Based User Dialogs 5day
-5、Enhancements and Modifications 5day 
-6、BAPI Development for Accessing SAP components 3day
-7、
-8、
-9、
-
-
-
-
-
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
