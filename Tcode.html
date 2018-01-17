@@ -1,0 +1,1355 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jack博客</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+		  <div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>KIX</strong> 软件集成</a>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+			  <!-- Content -->
+				  <section>
+					  <header class="main">
+						  <h1>常用事务码</h1>
+				      </header>
+
+									 
+
+					  <p>SAP 提供多种方法查找系统内的事务代码
+
+<ol>
+<li>使用SE11查看存储事物代码的表：TSTC 或者TSTCT
+<br/>
+TSTC： 存有事务代码，程序名称，屏幕号码等字段
+<br/>
+TSTCT： 存有语言代码，事务代码，事务文本 这三个字段
+<br/>
+XX* 可搜索XX开头的所有事物码。如果你想显示所有的事物码（5w多），你更改最大命中数量为99999即可。
+</li>
+<li>利用事务码SM01，尽管这个tcode是来锁定/解锁事务码的，但你可以用来查看系统中所有的tcode。
+</li>
+<li>利用SE93，其中有两个方法，先进入se93
+<br/>
+方法1:如果你熟悉系统各类模块事务码开头的字符，可以利用搜索帮组来做。如MM模块很多事务码MM开头，那么输入MM* 按F4。
+<br/>
+方法2:上面菜单，实用工具->查找->执行。如果想显示所有的，记得修改最大命中数。
+</li>
+</ol>
+
+
+
+另外：如果你想知道一个事务码在sap菜单（登陆系统后左侧的菜单）下的路径，可以利用tcode：Search_SAP_Menu
+</p>
+									 
+
+					  <hr class="major" />
+
+					  <h2>MM模</h2>
+							  <table  class="alt">
+							    <thead>
+							      <tr>
+							        <th>Tcode</th>
+							        <th>Description</th>
+						          </tr>
+						        </thead>
+							    <tbody>
+							      <tr>
+							        <td> mm01 </td>
+							        <td> 建物料主数据 </td>
+						          </tr>
+							      <tr>
+							        <td> mm02 </td>
+							        <td> 更改物料主数据 </td>
+						          </tr>
+							      <tr>
+							        <td> mm03 </td>
+							        <td> 查看物料主数据(一般1为创建，2为更改，3为查看) </td>
+						          </tr>
+							      <tr>
+							        <td> xk01 </td>
+							        <td> 建供应商 </td>
+						          </tr>
+							      <tr>
+							        <td> me11: </td>
+							        <td> 建采购信息记录 </td>
+						          </tr>
+							      <tr>
+							        <td> me51n: </td>
+							        <td> 创建采购申请单 </td>
+						          </tr>
+							      <tr>
+							        <td> me55 </td>
+							        <td> 采购申请的集中批准 </td>
+						          </tr>
+							      <tr>
+							        <td> me57 </td>
+							        <td> 分配并处理采购申请 </td>
+						          </tr>
+							      <tr>
+							        <td> me41 </td>
+							        <td> 创建RFQ(request for quote报价请求) </td>
+						          </tr>
+							      <tr>
+							        <td> me47 </td>
+							        <td> 维护报价 </td>
+						          </tr>
+							      <tr>
+							        <td> zme49 </td>
+							        <td> 采购报价单审核 </td>
+						          </tr>
+							      <tr>
+							        <td> me01 </td>
+							        <td> 维护货源清单 </td>
+						          </tr>
+							      <tr>
+							        <td> me23n </td>
+							        <td> 查询采购订单 </td>
+						          </tr>
+							      <tr>
+							        <td> migo_gr </td>
+							        <td> 采购订单收货 </td>
+						          </tr>
+							      <tr>
+							        <td> me21n </td>
+							        <td> 创建采购订单 </td>
+						          </tr>
+							      <tr>
+							        <td> mb21 </td>
+							        <td> 创建预留 </td>
+						          </tr>
+							      <tr>
+							        <td> mb22 </td>
+							        <td> 修改预留 </td>
+						          </tr>
+							      <tr>
+							        <td> mb23 </td>
+							        <td> 查看预留概况 </td>
+						          </tr>
+							      <tr>
+							        <td> mmbe </td>
+							        <td> 库存总览（查看库存） </td>
+						          </tr>
+							      <tr>
+							        <td> mb1a </td>
+							        <td> 输入发货 </td>
+						          </tr>
+							      <tr>
+							        <td> co01 </td>
+							        <td> 创建生产订单 </td>
+						          </tr>
+							      <tr>
+							        <td> co02 </td>
+							        <td> 修改生产订单 </td>
+						          </tr>
+							      <tr>
+							        <td> co03 </td>
+							        <td> 查看生产订单 </td>
+						          </tr>
+							      <tr>
+							        <td> mb51 </td>
+							        <td> 查看物料凭证清单 </td>
+						          </tr>
+							      <tr>
+							        <td> me5a </td>
+							        <td> 查询采购申请列表 </td>
+						          </tr>
+							      <tr>
+							        <td> me4s </td>
+							        <td> 每一汇总号报价请求 </td>
+						          </tr>
+							      <tr>
+							        <td> zme49 </td>
+							        <td> 采购报价单审核 </td>
+						          </tr>
+							      <tr>
+							        <td> me49 </td>
+							        <td> 价格比较 </td>
+						          </tr>
+							      <tr>
+							        <td> mkvz </td>
+							        <td> 显示多个供应商清单 </td>
+						          </tr>
+							      <tr>
+							        <td> me1m </td>
+							        <td> 每个物料信息记录 </td>
+						          </tr>
+							      <tr>
+							        <td> me1e </td>
+							        <td> 报价价格历史记录 </td>
+						          </tr>
+							      <tr>
+							        <td> me1p </td>
+							        <td> 采购订单价格历史记录 </td>
+						          </tr>
+							      <tr>
+							        <td> me01 </td>
+							        <td> 创建货源清单 </td>
+						          </tr>
+							      <tr>
+							        <td> me04 </td>
+							        <td> 更改货源清单 </td>
+						          </tr>
+							      <tr>
+							        <td> me03 </td>
+							        <td> 显示货源清单 </td>
+						          </tr>
+							      <tr>
+							        <td> me29n </td>
+							        <td> 采购订单单独审批 </td>
+						          </tr>
+							      <tr>
+							        <td> me28 </td>
+							        <td> 采购订单集中审批 </td>
+						          </tr>
+							      <tr>
+							        <td> mrko </td>
+							        <td> 寄售结算 </td>
+						          </tr>
+							      <tr>
+							        <td> mir7 </td>
+							        <td> 发票校验 </td>
+						          </tr>
+						        </tbody>
+				    </table>
+							  <h2>块</h2>
+					  <hr class="major" />
+
+					  <h2>SD 模块</h2>
+					  <table  class="alt">
+											  <thead>
+												  <tr>
+													  <th>Tcode</th>
+													  <th>Description</th>
+																	 
+											      </tr>
+										      </thead>
+											  <tbody>
+                                                            
+                                                            
+                                                <tr>	<td>	xd01	</td>	<td>	创建客户	</td>	</tr>
+<tr>	<td>	xd04	</td>	<td>	现实客户修改历史	</td>	</tr>
+<tr>	<td>	xd05	</td>	<td>	冻结/解冻客户	</td>	</tr>
+<tr>	<td>	xd06	</td>	<td>	删除客户信息	</td>	</tr>
+<tr>	<td>	va01	</td>	<td>	创建销售订单	</td>	</tr>
+<tr>	<td>	vap1	</td>	<td>	创建联系人	</td>	</tr>
+<tr>	<td>	vk11	</td>	<td>	创建价格(FOB)条件(ZPRO)	</td>	</tr>
+<tr>	<td>	v/ld	</td>	<td>	查询价格清单	</td>	</tr>
+<tr>	<td>	fd32	</td>	<td>	创建/修改客户信贷记录	</td>	</tr>
+<tr>	<td>	fd/33	</td>	<td>	显示客户信贷记录	</td>	</tr>
+<tr>	<td>	va21	</td>	<td>	创建报价单	</td>	</tr>
+<tr>	<td>	va25	</td>	<td>	查询报价清单（单个客户）	</td>	</tr>
+<tr>	<td>	va25n	</td>	<td>	查询报价清单（多个客户）	</td>	</tr>
+<tr>	<td>	zsd002	</td>	<td>	销售订单查询与打印（可查询销售订单审批状态及审批人）	</td>	</tr>
+<tr>	<td>	 zsd003	</td>	<td>	审核销售订单	</td>	</tr>
+<tr>	<td>	vl01n	</td>	<td>	创建交货单	</td>	</tr>
+<tr>	<td>	vl10i	</td>	<td>	批量创建交货单	</td>	</tr>
+<tr>	<td>	vl02n	</td>	<td>	修改交货单	</td>	</tr>
+<tr>	<td>	vl09	</td>	<td>	取消交货单	</td>	</tr>
+<tr>	<td>	vf01	</td>	<td>	单独开具销售发票	</td>	</tr>
+<tr>	<td>	vf02	</td>	<td>	修改发票	</td>	</tr>
+<tr>	<td>	vf04	</td>	<td>	集中开具销售发票	</td>	</tr>
+<tr>	<td>	vf05	</td>	<td>	集中显示发票清单	</td>	</tr>
+<tr>	<td>	vf11	</td>	<td>	取消发票	</td>	</tr>
+
+                                                            
+                                              </tbody>
+															 
+										  </table>
+
+					  <hr class="major" />
+
+					  <h2>FI CO 模块</h2>
+							  
+					<table  class="alt" >
+							  <TR >
+							    <TD   rowspan="3" width="30%">科目主数据维护</TD>
+							    <TD>科目主数据维护 (集中）</TD>
+							    <TD >FS00</TD>
+					          </TR>
+					  <TR >
+									    <TD >科目主数据维护 (帐目表中）</TD>
+									    <TD >FSP0</TD>
+						      </TR>
+					  <TR >
+									    <TD >科目主数据维护 (公司代码下）</TD>
+									    <TD >FSS0</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="6">总帐科目凭证</TD>
+									    <TD>输入总帐科目凭证</TD>
+									    <TD >FB50/F-02</TD>
+						      </TR>
+					  <TR >
+									    <TD >更改总帐科目凭证</TD>
+									    <TD >FB02</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示总帐科目凭证</TD>
+									    <TD >FB03</TD>
+						      </TR>
+					  <TR >
+									    <TD >冲销凭证</TD>
+									    <TD >FB08</TD>
+						      </TR>
+					  <TR >
+									    <TD >重置已结清项目</TD>
+									    <TD >FBRA</TD>
+						      </TR>
+					  <TR >
+									    <TD >输入周期性凭证</TD>
+									    <TD >FBD1</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="4">手工凭证预制与审核</TD>
+									    <TD>预制总帐科目凭证</TD>
+									    <TD >FV50</TD>
+						      </TR>
+					  <TR >
+									    <TD >更改预制凭证</TD>
+									    <TD >FBV2</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示预制凭证</TD>
+									    <TD >FBV3</TD>
+						      </TR>
+					  <TR >
+									    <TD >过帐/删除预制凭证</TD>
+									    <TD >FBV0</TD>
+						      </TR>
+					  <TR >
+									    <TD  >科目分配模型</TD>
+									    <TD>创建/应用科目分配模型</TD>
+									    <TD >FB50/FV50/FKMT</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="2">清帐</TD>
+									    <TD>过帐并清帐</TD>
+									    <TD >F-04</TD>
+						      </TR>
+					  <TR >
+									    <TD >清帐</TD>
+									    <TD >F-03</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="6">报表</TD>
+									    <TD>显示总帐科目行项目</TD>
+									    <TD >FBL3N</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示总帐科目余额</TD>
+									    <TD >FS10N</TD>
+						      </TR>
+					  <TR >
+									    <TD >周期的实际/实际比较</TD>
+									    <TD >S_ALR_87012252</TD>
+						      </TR>
+					  <TR >
+									    <TD >资产负债彪/利润表</TD>
+									    <TD >S_ALR_87012284</TD>
+						      </TR>
+					  <TR >
+									    <TD >利润表</TD>
+									    <TD >GR55</TD>
+						      </TR>
+					  <TR >
+									    <TD >　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >汇率维护</TD>
+									    <TD>维护汇率</TD>
+									    <TD >OB08</TD>
+						      </TR>
+					  <TR >
+									    <TD  >会计期间</TD>
+									    <TD>会计期间关闭/打开</TD>
+									    <TD >OB52</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="2">MM期间</TD>
+									    <TD>查看当前期间</TD>
+									    <TD >MMRV</TD>
+						      </TR>
+					  <TR >
+									    <TD >打开下一期间</TD>
+									    <TD >MMPV</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="5">外币评估<BR>
+									      (属于期末结帐流程)</TD>
+									    <TD>总帐科目余额的外币评估</TD>
+									    <TD >F.05</TD>
+						      </TR>
+					  <TR >
+									    <TD >应收/应付未清项的外币评估</TD>
+									    <TD >F.05</TD>
+						      </TR>
+					  <TR >
+									    <TD >处理外币评估的批处理会话(Batch Input Session)</TD>
+									    <TD >SM35</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示外币评估产生的凭证</TD>
+									    <TD >FB03</TD>
+						      </TR>
+					  <TR >
+									    <TD >冲销/重做外币评估</TD>
+									    <TD >FB08</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="5">GR/IR清账<BR>
+									      (属于期末结帐流程)</TD>
+									    <TD>GR/IR清帐</TD>
+									    <TD >F.13</TD>
+						      </TR>
+					  <TR >
+									    <TD >GR/IR重组</TD>
+									    <TD >F.19</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示GR/IR重组产生的凭证</TD>
+									    <TD >FB03</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示相关科目的余额</TD>
+									    <TD >FS10N</TD>
+						      </TR>
+					  <TR >
+									    <TD >如果GR/IR重组后又有收货/退货/冲销，如何处理</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >科目余额结转（年终结帐流程）</TD>
+									    <TD>余额结转</TD>
+									    <TD >F.16</TD>
+						      </TR>
+					  <TR >
+									    <TD  >客户/供应商余额结转</TD>
+									    <TD>客户/供应商余额转</TD>
+									    <TD >F.07</TD>
+						      </TR>
+					  <TR >
+									    <TD  >　</TD>
+									    <TD>　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD   colspan="3"><STRONG>应收帐款</STRONG></TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="5">客户主数据维护<BR>
+									      员工主数据维护</TD>
+									    <TD>创建</TD>
+									    <TD >FD01</TD>
+						      </TR>
+					  <TR >
+									    <TD >更改</TD>
+									    <TD >FD02</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示</TD>
+									    <TD >FD03</TD>
+						      </TR>
+					  <TR >
+									    <TD >冻结/解冻</TD>
+									    <TD >FD05</TD>
+						      </TR>
+					  <TR >
+									    <TD >删除</TD>
+									    <TD >FD06</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="7">客户凭证</TD>
+									    <TD>客户发票</TD>
+									    <TD >FB70</TD>
+						      </TR>
+					  <TR >
+									    <TD >客户贷方凭证</TD>
+									    <TD >FB75</TD>
+						      </TR>
+					  <TR >
+									    <TD >打印凭证</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD >更改凭证</TD>
+									    <TD >FB02</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示凭证</TD>
+									    <TD >FB03</TD>
+						      </TR>
+					  <TR >
+									    <TD >冲销客户凭证</TD>
+									    <TD >FB08</TD>
+						      </TR>
+					  <TR >
+									    <TD >重置已结清客户项目</TD>
+									    <TD >FBRA</TD>
+						      </TR>
+					  <TR >
+									    <TD  >预收款及清账</TD>
+									    <TD>　</TD>
+									    <TD >F-47/48</TD>
+						      </TR>
+					  <TR >
+									    <TD  >Scenario 1:<BR>
+									      例如：应收总金额 10,000 CNY<BR>
+									      按30% + 30% + 40% 收款<BR>
+									      1）预收  30%<BR>
+									      2）预收  30%<BR>
+									      3）应收  10,000 CNY<BR>
+									      4）付款  40% 并清预收 30% + 30%         </TD>
+									    <TD><BR>
+									      <BR>
+									      <BR>
+									      预收定金<BR>
+									      预收定金<BR>
+									      应收<BR>
+									      收款并清预收</TD>
+									    <TD ><BR>
+									      <BR>
+									      <BR>
+									      F-29<BR>
+									      F-29<BR>
+									      FB70<BR>
+									      F-28</TD>
+						      </TR>
+					  <TR >
+									    <TD  >Scenario 2:<BR>
+									      例如：应收总金额 10,000 CNY<BR>
+									      按30% + 30% + 40% 收款<BR>
+									      1）预收  30%<BR>
+									      2）预收  30%<BR>
+									      3）预收  40%<BR>
+									      4）应收  10,000 CNY<BR>
+									      5）清帐       </TD>
+									    <TD><BR>
+									      <BR>
+									      <BR>
+									      预收定金<BR>
+									      预收定金<BR>
+									      预收定金<BR>
+									      应收<BR>
+									      清帐 - 预收定金和应收</TD>
+									    <TD ><BR>
+									      <BR>
+									      <BR>
+									      F-29<BR>
+									      F-29<BR>
+									      F-29<BR>
+									      FB70<BR>
+									      F-30</TD>
+						      </TR>
+					  <TR >
+									    <TD  >应收票据</TD>
+									    <TD>　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="115" rowspan="3">Scenario 1:<BR>
+									      用票据贴现</TD>
+									    <TD>应收票据入帐</TD>
+									    <TD >F-36</TD>
+						      </TR>
+					  <TR >
+									    <TD >票据未到期贴现 </TD>
+									    <TD >F-33</TD>
+						      </TR>
+					  <TR >
+									    <TD >票据到期转帐</TD>
+									    <TD >F-20</TD>
+						      </TR>
+					  <TR >
+									    <TD  >Scenario 2:<BR>
+									      票据到期直接入帐</TD>
+									    <TD>　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >Scenario 3:<BR>
+									      用票据付款</TD>
+									    <TD>　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >应收帐款其他应收款</TD>
+									    <TD>输入其他应收款凭证</TD>
+									    <TD >F-22</TD>
+						      </TR>
+					  <TR >
+									    <TD  >员工借款与报销</TD>
+									    <TD>　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >收款</TD>
+									    <TD>收款</TD>
+									    <TD >F-28</TD>
+						      </TR>
+					  <TR >
+									    <TD  >清帐</TD>
+									    <TD>清帐并转帐</TD>
+									    <TD >F-30</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="76" rowspan="4">报表</TD>
+									    <TD>客户行项目显示</TD>
+									    <TD >FBL5N</TD>
+						      </TR>
+					  <TR >
+									    <TD >客户余额显示</TD>
+									    <TD >FD10N</TD>
+						      </TR>
+					  <TR >
+									    <TD >客户帐龄分析表</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD >　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >　</TD>
+									    <TD>　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD   colspan="3"><STRONG>应付帐款</STRONG></TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="5">供应商主数据维护</TD>
+									    <TD>创建</TD>
+									    <TD >FK01</TD>
+						      </TR>
+					  <TR >
+									    <TD >更改</TD>
+									    <TD >FK02</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示</TD>
+									    <TD >FK03</TD>
+						      </TR>
+					  <TR >
+									    <TD >冻结/解冻</TD>
+									    <TD >FK05</TD>
+						      </TR>
+					  <TR >
+									    <TD >删除标记</TD>
+									    <TD >FK06</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="7">供应商凭证</TD>
+									    <TD>供应商发票</TD>
+									    <TD >FB60</TD>
+						      </TR>
+					  <TR >
+									    <TD >供应商贷方凭证</TD>
+									    <TD >FB65</TD>
+						      </TR>
+					  <TR >
+									    <TD >打印凭证</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD >更改凭证</TD>
+									    <TD >FB02</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示凭证</TD>
+									    <TD >FB03</TD>
+						      </TR>
+					  <TR >
+									    <TD >冲销供应商凭证</TD>
+									    <TD >FB08</TD>
+						      </TR>
+					  <TR >
+									    <TD >重置已结清供应商项目</TD>
+									    <TD >FBRA</TD>
+						      </TR>
+					  <TR >
+									    <TD  >预付款及清账</TD>
+									    <TD>　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >Scenario 1:<BR>
+									      例如：应付总金额 10,000 CNY<BR>
+									      按30% + 30% + 40% 付款<BR>
+									      1）预付  30%<BR>
+									      2）预付  30%<BR>
+									      3）应付款  10,000 CNY<BR>
+									      4）付款  40% 并清预付款 30% + 30%         </TD>
+									    <TD><BR>
+									      <BR>
+									      <BR>
+									      预付定金<BR>
+									      预付定金<BR>
+									      应付<BR>
+									      付款并清预付</TD>
+									    <TD ><BR>
+									      <BR>
+									      <BR>
+									      F-48<BR>
+									      F-48<BR>
+									      FB60/MIRO<BR>
+									      F-53</TD>
+						      </TR>
+					  <TR >
+									    <TD  >Scenario 2:<BR>
+									      例如：应付总金额 10,000 CNY<BR>
+									      按30% + 30% + 40% 付款<BR>
+									      1）预付  30%<BR>
+									      2）预付  30%<BR>
+									      3）预付  40%<BR>
+									      4）应付  10,000 CNY<BR>
+									      5）清帐       </TD>
+									    <TD><BR>
+									      <BR>
+									      <BR>
+									      预付定金<BR>
+									      预付定金<BR>
+									      预付定金<BR>
+									      应付<BR>
+									      清帐 - 预付定金和应付</TD>
+									    <TD ><BR>
+									      <BR>
+									      <BR>
+									      F-48<BR>
+									      F-48<BR>
+									      F-48<BR>
+									      FB60/MIRO<BR>
+									      F-51</TD>
+						      </TR>
+					  <TR >
+									    <TD  >Scenario 3:<BR>
+									      例如：应收总金额 10,000 CNY<BR>
+									      按30% + 30% + 35% 付款 + 5%滞留<BR>
+									      1）预付  30%<BR>
+									      2）预付  30%<BR>
+									      3）应付  10,000 CNY<BR>
+									      4）付款  35% 并清预付，滞留5%</TD>
+									    <TD><BR>
+									      <BR>
+									      <BR>
+									      预付定金<BR>
+									      预付定金<BR>
+									      应付<BR>
+									      收款并清预付款，并滞留5%在AP</TD>
+									    <TD ><BR>
+									      <BR>
+									      <BR>
+									      F-48<BR>
+									      F-48<BR>
+									      FB60/MIRO<BR>
+									      F-53</TD>
+						      </TR>
+					  <TR >
+									    <TD  >Scenario 4:<BR>
+									      例如：应付总金额 10,000 CNY<BR>
+									      按30% + 30% + 35% 付款 + 5%滞留<BR>
+									      1）预付  30%<BR>
+									      2）预付  30%<BR>
+									      3）预付  35%<BR>
+									      4）应付  10,000 CNY<BR>
+									      5）清帐并清预付，滞留5%       </TD>
+									    <TD><BR>
+									      <BR>
+									      <BR>
+									      预付定金<BR>
+									      预付定金<BR>
+									      预付定金<BR>
+									      应付<BR>
+									      付款并清预付</TD>
+									    <TD ><BR>
+									      <BR>
+									      <BR>
+									      F-48<BR>
+									      F-48<BR>
+									      F-48<BR>
+									      FB60/MIRO<BR>
+									      F-51</TD>
+						      </TR>
+					  <TR >
+									    <TD  >付款</TD>
+									    <TD>付款</TD>
+									    <TD >F-53</TD>
+						      </TR>
+					  <TR >
+									    <TD  >清帐</TD>
+									    <TD>清帐</TD>
+									    <TD >F-51</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="38" rowspan="2">应付票据</TD>
+									    <TD>票据付款</TD>
+									    <TD >F-40</TD>
+						      </TR>
+					  <TR >
+									    <TD >转帐并清帐</TD>
+									    <TD >F-51</TD>
+						      </TR>
+					  <TR >
+									    <TD  >应付帐款其他应付款</TD>
+									    <TD>输入其他应付款凭证</TD>
+									    <TD >F-42/F-43</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="248" rowspan="11">发票校验</TD>
+									    <TD>发票</TD>
+									    <TD >MIRO</TD>
+						      </TR>
+					  <TR >
+									    <TD >发票价格不同于PO价格的发票校验</TD>
+									    <TD >MIRO</TD>
+						      </TR>
+					  <TR >
+									    <TD >贷方凭证 - 退货</TD>
+									    <TD >MIRO</TD>
+						      </TR>
+					  <TR >
+									    <TD >事后借记 - PO价格偏低，发票已经校验并无法冲销</TD>
+									    <TD >MIRO</TD>
+						      </TR>
+					  <TR >
+									    <TD >后续贷记 - PO价格偏高，发票已经校验并无法冲销</TD>
+									    <TD >MIRO</TD>
+						      </TR>
+					  <TR >
+									    <TD >输入运费或其他有关PO的费用 - 事后借记</TD>
+									    <TD >MIRO</TD>
+						      </TR>
+					  <TR >
+									    <TD >固定资产的发票校验-选择付款方式</TD>
+									    <TD >MIRO</TD>
+						      </TR>
+					  <TR >
+									    <TD >冲销</TD>
+									    <TD >MR8M</TD>
+						      </TR>
+					  <TR >
+									    <TD >查看发票凭证</TD>
+									    <TD >MIR4</TD>
+						      </TR>
+					  <TR >
+									    <TD >发票总览</TD>
+									    <TD >MIR6</TD>
+						      </TR>
+					  <TR >
+									    <TD >　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="76" rowspan="4">报表</TD>
+									    <TD>供应商行项目</TD>
+									    <TD >FBL1N</TD>
+						      </TR>
+					  <TR >
+									    <TD >供应商余额</TD>
+									    <TD >FK10N</TD>
+						      </TR>
+					  <TR >
+									    <TD >供应商帐龄分析</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD >　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >　</TD>
+									    <TD>　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD   colspan="3"><STRONG>固定资产</STRONG></TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="5">固定资产主数据维护</TD>
+									    <TD>创建</TD>
+									    <TD >AS01</TD>
+						      </TR>
+					  <TR >
+									    <TD >更改</TD>
+									    <TD >AS02</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示</TD>
+									    <TD >AS03</TD>
+						      </TR>
+					  <TR >
+									    <TD >冻结/解冻</TD>
+									    <TD >AS05</TD>
+						      </TR>
+					  <TR >
+									    <TD >删除</TD>
+									    <TD >AS06</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="5">在建工程主数据维护</TD>
+									    <TD>创建</TD>
+									    <TD >AS01</TD>
+						      </TR>
+					  <TR >
+									    <TD >更改</TD>
+									    <TD >AS02</TD>
+						      </TR>
+					  <TR >
+									    <TD >显示</TD>
+									    <TD >AS03</TD>
+						      </TR>
+					  <TR >
+									    <TD >冻结/解冻</TD>
+									    <TD >AS05</TD>
+						      </TR>
+					  <TR >
+									    <TD >删除</TD>
+									    <TD >AS06</TD>
+						      </TR>
+					  <TR >
+									    <TD  >固定资产采购 - 没有PO</TD>
+									    <TD>创建固定资产<BR>
+									      固定资产入帐</TD>
+									    <TD >AS01<BR>
+									      F-90</TD>
+						      </TR>
+					  <TR >
+									    <TD  >固定资产贷项凭证</TD>
+									    <TD>固定资产贷项凭证</TD>
+									    <TD >F-02</TD>
+						      </TR>
+							  <TR height="114">
+							    <TD  height="114">　</TD>
+							    <TD>　</TD>
+							    <TD >ko88</TD>
+					          </TR>
+					  <TR >
+									    <TD  height="38" rowspan="2">在建工程转固（结算）</TD>
+									    <TD>分配</TD>
+									    <TD >AIAB</TD>
+						      </TR>
+					  <TR >
+									    <TD >记账结算</TD>
+									    <TD >AIBU</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="83" rowspan="2">资产转移</TD>
+									    <TD>公司代码内转移 - 成本中心的改变</TD>
+									    <TD >AS02</TD>
+						      </TR>
+					  <TR >
+									    <TD >公司代码内转移 - 资产类别的改变<BR>
+									      - 完全转移/部分转移<BR>
+									      - 转移至已有资产<BR>
+									      - 转移至新建资产</TD>
+									    <TD >ABUMN</TD>
+						      </TR>
+					  <TR >
+									    <TD  >资产折旧</TD>
+									    <TD>期末资产折旧记帐<BR>
+									      - 计划内记帐运行<BR>
+									      - 重复<BR>
+									      - 重新启动</TD>
+									    <TD >ABAF</TD>
+						      </TR>
+					  <TR >
+									    <TD  >资产捐赠</TD>
+									    <TD>- 报废资产<BR>
+									      - 手工调整资产清理科目</TD>
+									    <TD >ABAVN<BR>
+									      FB50</TD>
+						      </TR>
+					  <TR >
+									    <TD  >接受捐赠</TD>
+									    <TD>- 创建固定资产<BR>
+									      - 固定资产入帐</TD>
+									    <TD >AS01<BR>
+									      F-90</TD>
+						      </TR>
+					  <TR >
+									    <TD  >资产盘亏</TD>
+									    <TD>- 报废资产<BR>
+									      - 手工调整资产清理科目</TD>
+									    <TD >ABAVN<BR>
+									      FB50</TD>
+						      </TR>
+					  <TR >
+									    <TD  >资产盘盈</TD>
+									    <TD>- 创建固定资产<BR>
+									      - 固定资产入帐</TD>
+									    <TD >AS01<BR>
+									      F-90</TD>
+						      </TR>
+					  <TR >
+									    <TD  >资产报废</TD>
+									    <TD>- 报废资产<BR>
+									      - 手工调整资产清理科目</TD>
+									    <TD >ABAVN<BR>
+									      FB50</TD>
+						      </TR>
+					  <TR >
+									    <TD  >资产销售</TD>
+									    <TD>- 固定资产销售<BR>
+									      - 手工调整固定资产清理科目</TD>
+									    <TD >F-92<BR>
+									      FB50</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="76" rowspan="4">资产特殊业务(价值重估、折旧调整、资产减值、后资本化等)</TD>
+									    <TD>价值重估</TD>
+									    <TD >ABAW</TD>
+						      </TR>
+					  <TR >
+									    <TD >计划外折旧</TD>
+									    <TD >ABAA</TD>
+						      </TR>
+					  <TR >
+									    <TD >增记(调低往年折旧金额）</TD>
+									    <TD >ABZU</TD>
+						      </TR>
+					  <TR >
+									    <TD >资产减值</TD>
+									    <TD >ABSO</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="38" rowspan="2">资产凭证编辑</TD>
+									    <TD>资产凭证更改</TD>
+									    <TD >AB02</TD>
+						      </TR>
+					  <TR >
+									    <TD >资产凭证显示</TD>
+									    <TD >AB03</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="38" rowspan="2">资产凭证冲销</TD>
+									    <TD>资产凭证冲销</TD>
+									    <TD >AB08</TD>
+						      </TR>
+					  <TR >
+									    <TD >在建工程资本化冲销</TD>
+									    <TD >AIST</TD>
+						      </TR>
+					  <TR >
+									    <TD   rowspan="5">报表</TD>
+									    <TD>资产浏览器</TD>
+									    <TD >AW01N</TD>
+						      </TR>
+					  <TR >
+									    <TD >资产折旧记账日志</TD>
+									    <TD >AFBP</TD>
+						      </TR>
+					  <TR >
+									    <TD >折旧运行</TD>
+									    <TD >AFAB</TD>
+						      </TR>
+					  <TR >
+									    <TD >　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD >　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >　</TD>
+									    <TD>　</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD   colspan="3"><STRONG>控制</STRONG></TD>
+						      </TR>
+					  <TR >
+									    <TD  height="57" rowspan="3">成本中心及标准层次维护</TD>
+									    <TD>成本中心的维护</TD>
+									    <TD >KS01/KS02/KS03/KS04</TD>
+						      </TR>
+					  <TR >
+									    <TD >标准层次的维护</TD>
+									    <TD >OKEON/OKENN</TD>
+						      </TR>
+					  <TR >
+									    <TD >成本中心组的维护</TD>
+									    <TD >KSH1/KSH2/KSH3</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="38" rowspan="2">内部订单及内部订单组维护</TD>
+									    <TD>内部订单的维护</TD>
+									    <TD >KO01/KO02/KO03</TD>
+						      </TR>
+					  <TR >
+									    <TD >内部订单组的维护</TD>
+									    <TD >　</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="51" rowspan="2">次级成本要素及成本要素组维护</TD>
+									    <TD>次级成本要素的维护</TD>
+									    <TD >KA06/KA02/KA03/KA04/KA05</TD>
+						      </TR>
+					  <TR >
+									    <TD >成本要素组的维护</TD>
+									    <TD >KAH1/KAH2/KAH3</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="57" rowspan="3">利润中心及利润中心层次维护</TD>
+									    <TD>利润中心的维护</TD>
+									    <TD >KE51/KE52/KE53/KE54</TD>
+						      </TR>
+					  <TR >
+									    <TD >标准层次的维护</TD>
+									    <TD >KCH1/KCH5N/KCH6N</TD>
+						      </TR>
+					  <TR >
+									    <TD >利润中心组的维护</TD>
+									    <TD >KCH1/KCH2/KCH3</TD>
+						      </TR>
+					  <TR >
+									    <TD  >统计指标维护</TD>
+									    <TD>统计指标的维护</TD>
+									    <TD >KK01/KK02/KK03/KK03DEL</TD>
+						      </TR>
+					  <TR >
+									    <TD  height="76" rowspan="4">主数据：</TD>
+									    <TD>物料主数据</TD>
+									    <TD >MM01</TD>
+						      </TR>
+					  <TR >
+									    <TD >物料清单</TD>
+									    <TD >CS01</TD>
+						      </TR>
+					  <TR >
+									    <TD >工艺路线</TD>
+									    <TD >CA01</TD>
+						      </TR>
+					  <TR >
+									    <TD >工作中心、作业类型、作业计划价格</TD>
+									    <TD >CR01/KL01/KR26</TD>
+						      </TR>
+					  <TR >
+									    <TD  >标准成本估算</TD>
+									    <TD>　</TD>
+									    <TD >CK11N/CK24N</TD>
+						      </TR>
+					  <TR >
+									    <TD  >创建生产订单</TD>
+									    <TD>　</TD>
+									    <TD >CO01</TD>
+						      </TR>
+					  <TR >
+									    <TD  >生产发料</TD>
+									    <TD>　</TD>
+									    <TD >MB1A</TD>
+						      </TR>
+					  <TR >
+									    <TD  >报工</TD>
+									    <TD>　</TD>
+									    <TD >CO11N</TD>
+						      </TR>
+					  <TR >
+									    <TD  >关闭待结期间物料帐，并打开下一期间物料帐</TD>
+									    <TD>　</TD>
+									    <TD >MMPV/MMRV</TD>
+						      </TR>
+					  <TR >
+									    <TD  >打开下一个会计期间财务帐</TD>
+									    <TD>　</TD>
+									    <TD >OB52</TD>
+						      </TR>
+					  <TR >
+									    <TD  >确认本期间业务全部入帐,出纳与会计对帐等</TD>
+									    <TD>　</TD>
+									    <TD >F-02，VF01，MIRO等</TD>
+						      </TR>
+					  <TR >
+									    <TD  >固定资产折旧运行</TD>
+									    <TD>　</TD>
+									    <TD>　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >本月评估汇率及下月记帐汇率维护</TD>
+									    <TD>　</TD>
+									    <TD >OB08</TD>
+						      </TR>
+					  <TR >
+									    <TD  >GR/IR重分类</TD>
+									    <TD>　</TD>
+									    <TD >F.19/SM35</TD>
+						      </TR>
+					  <TR >
+									    <TD  >外币汇率评估</TD>
+									    <TD>　</TD>
+									    <TD>　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >维护各成本中心实际统计指标</TD>
+									    <TD>　</TD>
+									    <TD>　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >运行实际分配循环</TD>
+									    <TD>　</TD>
+									    <TD>KSV5</TD>
+						      </TR>
+					  <TR >
+									    <TD  >运实际分摊循环</TD>
+									    <TD>　</TD>
+									    <TD>KSU5</TD>
+						      </TR>
+					  <TR >
+									    <TD  >运行分割循环</TD>
+									    <TD>　</TD>
+									    <TD>KSS2</TD>
+						      </TR>
+					  <TR >
+									    <TD  >计算实际作业价格</TD>
+									    <TD>　</TD>
+									    <TD>KSII</TD>
+						      </TR>
+					  <TR >
+									    <TD  >对生产订单进行重估</TD>
+									    <TD>　</TD>
+									    <TD>CON2</TD>
+						      </TR>
+					  <TR >
+									    <TD  >更改WIP结帐期间</TD>
+									    <TD>　</TD>
+									    <TD>　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >对生产订单进行WIP计算</TD>
+									    <TD>　</TD>
+									    <TD>KKAO</TD>
+						      </TR>
+					  <TR >
+									    <TD  >对生产订单进行差异计算</TD>
+									    <TD>　</TD>
+									    <TD>KKS1</TD>
+						      </TR>
+					  <TR >
+									    <TD >打开本期物料可过帐</TD>
+									    <TD>　</TD>
+									    <TD>MMRV</TD>
+						      </TR>
+					  <TR >
+									    <TD  >对生产订单进行结算</TD>
+									    <TD>　</TD>
+									    <TD>CO88</TD>
+						      </TR>
+					  <TR >
+									    <TD  >关闭本期物料可过帐</TD>
+									    <TD>　</TD>
+									    <TD>MMRV</TD>
+						      </TR>
+					  <TR >
+									    <TD  >手工调整生产性成本中心因为小数点计算造成本的成本中心吸收不足或过量金额到当期销售成本</TD>
+									    <TD>　</TD>
+									    <TD>F-02/S_ALR_8701361</TD>
+						      </TR>
+					  <TR >
+									    <TD  >根据销售情况调整生产成本差异到当期销售成本</TD>
+									    <TD>　</TD>
+									    <TD>F-02</TD>
+						      </TR>
+					  <TR >
+									    <TD  >关闭本期会计记帐期间</TD>
+									    <TD>　</TD>
+									    <TD>关闭CO期间</TD>
+						      </TR>
+					  <TR >
+									    <TD  >结转总帐余额到下一会计年度</TD>
+									    <TD>　</TD>
+									    <TD>　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >结转往来余额到下一会计年度</TD>
+									    <TD>　</TD>
+									    <TD>　</TD>
+						      </TR>
+					  <TR >
+									    <TD  >固定资产年结</TD>
+                                        <TD>　</TD>
+									    <TD>　</TD>
+						      </TR>
+			        </table>
+
+			      </section>
+
+			</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									 
+								</nav>
+
+							 
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>该网站仅用于学习交流，不作任何商业用途，可以通过邮件方式联系，交流.</p>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">liangqihua21@21cn.com</a></li>
+										<li class="fa-phone">(000) 000-0000</li>
+										<li class="fa-home">  Somewhere Road #0757<br />
+										广东省, 佛山市三水区</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; KXI. All rights reserved. 仅供学习交流.  </p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
