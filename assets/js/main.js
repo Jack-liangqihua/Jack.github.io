@@ -6,8 +6,33 @@
 
 (function($) {
 
+//菜单
  var htmlobj=$.ajax({url:"Menu.txt",async:false});
   $("#menu").html(htmlobj.responseText);
+  
+//搜索
+$("#query").keyup(function () {
+	var qv =  $("#query").val();
+	  var key=[];
+               $('#menu').each(function () {
+                    $(this).find('li').each(function() {
+                      var tmp = $(this).text();    
+					  if(tmp.indexOf(qv)){                 
+                      	key.push($(this).text());
+					  }
+                    });
+
+                 });
+                 //遍历该数组可以获取所有值
+                 for (var i = 0 ; i < key.length; i++) {
+                      //todo
+					  console.log(key);
+                 }
+           
+	 
+	 
+});
+
   
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
