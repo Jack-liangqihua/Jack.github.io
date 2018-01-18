@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>数据字典</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>KIX</strong> 软件集成</a>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>数据字典</h1>
+									</header>
+<p>数据字典是SAP特有的，是一种在系统级别定义表、结构、数据元素等数据类型，也就是说，在数据字典中定义的数据类型，在整个系统中都可以引用（有点像超大范围的全局数据类型）
+数据类型可以在程序中通过TYPES语句定义并使用，也可以在数据字典中创建，二者的效果和使用方式是完全相同的，但数据字典类型的作用域更加广泛。
+<br/>
+<br/>
+创建、修改（维护）数据字典的T-code是:SE11，</p>
+
+
+<div class="row">
+														<div class="6u 12u$(small)">
+									<span class="image "><img style="width:100%" height="100%" src="images/Dictionary/Dictionary.gif" alt="Dictionary" /></span>
+                                    </div>
+
+									<div class="6u 12u$(small)">
+									 
+                                      <dl>
+														<dt>数据库表 Database Table
+</dt>
+														<dd>
+                                                        <ol>
+																<li>透明表（Transparent Table）：在数据库中有对应的物理表
+</li>
+																<li>存储表（Pooled Table）；簇表（Cluster Table）
+</li>
+                                                         </ol>
+                                                        
+                                                        </dd>
+														<dt>视图 View
+</dt>
+														<dd>
+                                                        <ol>
+                                                        <li>数据库视图 Database View</li>
+<li>项目视图 Projection View</li>
+<li>维护视图 Maintenance View</li>
+<li>帮助视图 Help View</li>
+
+																 
+                                                         </ol>
+                                                        
+                                                        </dd>
+                                                        
+                                                        <dt>数据类型 Data Type
+</dt>
+														<dd>
+                                                        <ol>
+                                                        <li>数据元素 Data Element：描述一个字段的用途</li>
+<li>结构 Structure：为若干个字段组合，在数据库不存在数据记录</li>
+<li>表类型 Table Type</li>
+
+																 
+                                                         </ol>
+                                                        
+                                                        </dd>
+                                                        
+                                                        <p>类型池 Type Group<br/>
+                                                          域 Domain：描述一个字段类型和长度等信息<br/>
+                                                          搜索帮助 Search Help<br/>
+                                                            锁对象 Lock Object<br/>													</dl>
+
+									 
+ </div>
+ </div>
+
+									 
+ <hr class="major" />
+
+									<h2>数据字典预置类型</h2>
+								  <div class="table-wrapper">
+														<table class="alt">
+															<thead>
+																<tr>
+                                                                <th>数据字典预置类型		</th>
+																	<th>ABAP 类型		</th>
+																	<th>运行长度		</th>
+																	<th>说明</th>
+																	 
+ 
+																</tr>
+															</thead>
+															<tbody>
+                                                            <tr> <td>	ACCP	</td> <td>	N(6)	</td> <td>	6	</td> <td>	会计结算周期	</td></tr>
+<tr> <td>	CHAR	</td> <td>	C(n)	</td> <td>	1 - 255	</td> <td>	字符	</td></tr>
+<tr> <td>	CLNT	</td> <td>	C(3)	</td> <td>	3	</td> <td>	集团、数据区域代码	</td></tr>
+<tr> <td>	CUKY	</td> <td>	C(5)	</td> <td>	5	</td> <td>	货币代码	</td></tr>
+<tr> <td>	CURR(n,m)	</td> <td>	P((n+1)/2) Decimal m	</td> <td>	1月17日	</td> <td>	货币金额	</td></tr>
+<tr> <td>	DATS	</td> <td>	D(8)	</td> <td>	8	</td> <td>	日期	</td></tr>
+<tr> <td>	DEC n,m	</td> <td>	P((n+1)/2) Decimal m	</td> <td>	n(1-31)m(1-17)	</td> <td>	数值计算	</td></tr>
+<tr> <td>	FLTP	</td> <td>	F(8)	</td> <td>	18	</td> <td>	浮点数	</td></tr>
+<tr> <td>	INT1	</td> <td>	X(1)	</td> <td>	3	</td> <td>	单字节整型数	</td></tr>
+<tr> <td>	INT2	</td> <td>	X(2)	</td> <td>	5	</td> <td>	双字节整型数	</td></tr>
+<tr> <td>	INT4	</td> <td>	X(4)	</td> <td>	10	</td> <td>	四字节整形数	</td></tr>
+<tr> <td>	LANG	</td> <td>	C(1)	</td> <td>	内部一位，外部2位	</td> <td>	语言代码	</td></tr>
+<tr> <td>	LCHR	</td> <td>	C(n)	</td> <td>	256-最大值	</td> <td>	长字符	</td></tr>
+<tr> <td>	LRAW	</td> <td>	X(n)	</td> <td>	256-最大值	</td> <td>	长字符串	</td></tr>
+<tr> <td>	NUMC n	</td> <td>	N(n)	</td> <td>	1-255	</td> <td>	数值文字	</td></tr>
+<tr> <td>	PREC	</td> <td>	X(2)	</td> <td>	16	</td> <td>	精确度	</td></tr>
+<tr> <td>	QUAN n,m	</td> <td>	P((n+1)/2) Decimal m	</td> <td>	1月17日	</td> <td>	数量	</td></tr>
+<tr> <td>	RAW n	</td> <td>	X(n)	</td> <td>	1-255	</td> <td>	位字串	</td></tr>
+<tr> <td>	TIMS	</td> <td>	T(6)	</td> <td>	6	</td> <td>	时间	</td></tr>
+<tr> <td>	VARC n	</td> <td>	C(n)	</td> <td>	255-最大值	</td> <td>	长字符	</td></tr>
+<tr> <td>	STRING	</td> <td>	String	</td> <td>	1-最大值	</td> <td>	字符串	</td></tr>
+<tr> <td>	RAWSTRING	</td> <td>	Xstring	</td> <td>	1-最大值	</td> <td>	位字符串	</td></tr>
+<tr> <td>	UNIT	</td> <td>	C(n)	</td> <td>	2月3日	</td> <td>	单位	</td></tr>
+
+                                                            
+                                                            </tbody>
+															 
+														</table>
+                                                        
+													</div>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									 
+								</nav>
+
+							 
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>该网站仅用于学习交流，不作任何商业用途，可以通过邮件方式联系，交流.</p>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">liangqihua21@21cn.com</a></li>
+										<li class="fa-phone">(000) 000-0000</li>
+										<li class="fa-home">  Somewhere Road #0757<br />
+										广东省, 佛山市三水区</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; KXI. All rights reserved. 仅供学习交流.  </p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

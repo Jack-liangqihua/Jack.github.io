@@ -22,10 +22,7 @@
 										<li>
 											<span class="opener">ABAP程序设计</span>
 											<ul>
-												<li><a href="#">基础语法</a></li>
-												<li><a href="#">数据字典</a></li>
-												<li><a href="#">内表</a></li>
-												<li><a href="#">接口</a></li>
+												<li><a href="ABAPDictionary.html">数据字典</a></li> 
 											</ul>
 										</li>
 										<li>
