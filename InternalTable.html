@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>KIX</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>KIX</strong> 软件集成</a>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>内表</h1>
+									</header>
+
+									 
+
+									<p>内表与结构体基本类似，它同样是程序运行中被临时创建的一个存储空间，它是一个可包含多条记录的数据表。    </p>
+									<h4>内表共有3种类型：</h4>
+															<ol>
+																
+									  
+									  <li>Standard：标准表 </li>
+									  
+									  <li>Sorted：排序表 </li>
+									  
+									  <li>Hashed：哈希表 </li>
+                                      </ol>
+									
+
+								 
+									<hr class="major" />
+
+									<h2>1.内表的定义</h2>
+									<pre><code>
+                                    
+                                    
+                                    具体定义有以下几种方式：
+
+    DATA <内表名> TYPE <结构类型> WITH [UNIQUE|NON-UNIQUE] [INITIAL SIZE n] [WITH HEADER LINE]。
+
+    DATA <内表名> LIKE TABLE OF <内表或者透明表> WITH [UNIQUE|NON-UNIQUE] [INITIAL SIZE n] [WITH HEADER LINE]。
+
+    DATA BEGIN OF itab OCCURS n,
+
+       字段......
+
+    END OF itab [VALID BETWEEN f1 AND f2]。
+                                    
+                                    </code>
+                                    </pre>
+                                    
+                                    
+									<hr class="major" />
+
+									<h2>2.内表的赋值</h2>
+                                    <p>段落</p>
+                                    <hr class="major" />
+
+									<h2>3.内表数据管理</h2>
+                                  
+                                  
+													<dl>
+														<dt> 1.内表的清空</dt>
+														<dd>
+                                                        
+                                   <pre><code>
+                                    对内表数据的清空共包括4种模式
+
+      CLEAR <ITAB>：仅清空HEADER LINE，对内表数据存储空间不影响。
+
+      REFRESH <ITAB>：清空内表数据存储空间，对HEADER LINE不影响。
+
+      REFRESH <itab> FROM TABLE <dbtab>：清空内表存储空间，填充从数据库表所获数据。
+
+      FREE <ITAB>：清空内表数据存储空间，对HEADER LINE不影响。
+       </code>
+                                    </pre>
+                                    </dd>
+                                    
+                                    
+                                    <dt>  2.INSERT（向内表插入数据）</dt>
+														<dd>
+                                                        
+                                                         </dd>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                       <dt> 3.MODIFY(直接修改内表数据)</dt>
+														<dd>
+                                                        段落
+                                                         </dd>
+                                      <dt> 4.COLLECT（内表数据分类汇总）</dt>
+														<dd>
+                                                        将内表中相同的字段合并，若有类型为I的字段，则将其值加总。
+
+        COLLECT [wa INTO] itab.
+                                                         </dd>
+                                    
+                                       <dt>  5.SORT（内表数据排序）</dt>
+														<dd>
+                                                        段落
+                                                         </dd>
+                                   
+                                    <dt>   6.READ(读取)</dt>
+														<dd>
+                                                        段落
+                                                         </dd>
+                                   
+                                   
+                                       <dt>   7.LOOP....ENDLOOP（循环读取内表数据）</dt>
+														<dd>
+                                                        段落
+                                                         </dd>
+                                    
+                                   
+                                   
+                                  
+                                    
+                                    
+                                    </dl>
+
+									<hr class="major" />
+
+									<h2>1.内表的定义</h2>
+                                    <p>段落</p>
+
+
+
+
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									 
+								</nav>
+
+							 
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>该网站仅用于学习交流，不作任何商业用途，可以通过邮件方式联系，交流.</p>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">liangqihua21@21cn.com</a></li>
+										<li class="fa-phone">(000) 000-0000</li>
+										<li class="fa-home">  Somewhere Road #0757<br />
+										广东省, 佛山市三水区</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; KXI. All rights reserved. 仅供学习交流.  </p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

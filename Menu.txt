@@ -22,7 +22,8 @@
 										<li>
 											<span class="opener">ABAP程序设计</span>
 											<ul>
-												<li><a href="ABAPDictionary.html">数据字典</a></li> 
+												<li><a href="ABAPDictionary.html">数据字典</a></li>  
+												<li><a href="InternalTable.html">内表</a></li> 
 											</ul>
 										</li>
 										<li>
