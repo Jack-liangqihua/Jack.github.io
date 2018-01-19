@@ -17,6 +17,8 @@
 											<ul>
 												<li><a href="basis.html">系统基础知识</a></li> 
 												<li><a href="Tcode.html">常用事务码</a></li> 
+												<li><a href="usefullFunction.html">常用函数</a></li> 
+												
 											</ul>
 										</li>
 										<li>
