@@ -21,7 +21,7 @@
 
 				<!-- Main -->
 					<div id="main">
-						<div class="inner">
+<div class="inner">
 
 							<!-- Header -->
 								<header id="header">
@@ -35,133 +35,131 @@
 									</ul>
 								</header>
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>内表</h1>
-									</header>
-
-									 
-
-									<p>内表与结构体基本类似，它同样是程序运行中被临时创建的一个存储空间，它是一个可包含多条记录的数据表。    </p>
-									<h4>内表共有3种类型：</h4>
-															<ol>
+	    <!-- Content -->
+		    <section>
+			    <header class="main">
+				    <h1>内表</h1>
+		        </header> 
+			    <h4>内表共有3种类型：</h4>
+									    <ol>
 																
 									  
-									  <li>Standard：标准表 </li>
+									  <li>Standard：标准表  ，系统为该表的每一行数据生成一个逻辑索引，自己内部维护着行号（<SPAN lang="EN-US">Index</SPAN>）的编码。表的键值不唯一，且没有按照表键自动进行排序，支持通过索引访问和键访问两种方式。填充标准表时可以插入到指定位置或现在有行之后，程序对内表的寻址操作可以通过关键字或索引进行。在对表进行<STRONG>插入删除等操作时，各数据行在内存中的物理位置不变</STRONG>，系统仅重新排列各数据行的索引值。当经常用索引访问表的时候就选择标准表。</li>
 									  
-									  <li>Sorted：排序表 </li>
+									  <li>Sorted：排序表 ，也有一个逻辑索引，不同之处是排序表总是按其表关键字<STRONG>升序排序后现进行存储</STRONG>，排序内表自己内部也维护着行号的编号，表的键值可以唯一或者不唯一，支持通过索引访问和键访问两种方式。如果经常使用键来访问数据，或者希望数据能够自动排序时，就用排序表。</li>
 									  
-									  <li>Hashed：哈希表 </li>
-                                      </ol>
+									  <li>Hashed：哈希表 ，哈希表通过哈希函数生成的表键来标识和快速访问表行，哈希表中的表键没有顺序，其值在表中必须唯一，只允许通过表键来访问哈希表。寻址一个数据行的所需时间与表行数无关。如果<STRONG>内表非常大</STRONG>而且希望用主键访问，就用哈希表。</li>
+                  </ol>
 									
 
 								 
-									<hr class="major" />
+			    <hr class="major" />
 
-									<h2>1.内表的定义</h2>
-									<pre><code>
+			    <h2>1.内表的定义</h2>
+			    <p> 
                                     
                                     
-                                    具体定义有以下几种方式：
+                  具体定义有以下几种方式：<br/>
 
-    DATA <内表名> TYPE <结构类型> WITH [UNIQUE|NON-UNIQUE] [INITIAL SIZE n] [WITH HEADER LINE]。
-
-    DATA <内表名> LIKE TABLE OF <内表或者透明表> WITH [UNIQUE|NON-UNIQUE] [INITIAL SIZE n] [WITH HEADER LINE]。
-
-    DATA BEGIN OF itab OCCURS n,
-
-       字段......
-
-    END OF itab [VALID BETWEEN f1 AND f2]。
+    DATA <内表名> TYPE <结构类型> WITH [UNIQUE|NON-UNIQUE] [INITIAL SIZE n] [WITH HEADER LINE]。<br/>
+    DATA <内表名> LIKE TABLE OF <内表或者透明表> WITH [UNIQUE|NON-UNIQUE] [INITIAL SIZE n] [WITH HEADER LINE]。<br/>
+    DATA BEGIN OF itab OCCURS n,<br/>
+       字段......<br/>
+    END OF itab [VALID BETWEEN f1 AND f2]。<br/>
                                     
-                                    </code>
-                                    </pre>
+                                     
+                </p>
                                     
                                     
-									<hr class="major" />
+			    <hr class="major" />
 
-									<h2>2.内表的赋值</h2>
-                                    <p>段落</p>
-                                    <hr class="major" />
+			    <h2>2.内表的赋值</h2>
+                <p>段落</p>
+                <hr class="major" />
 
-									<h2>3.内表数据管理</h2>
+			    <h2>3.内表数据管理</h2>
                                   
                                   
-													<dl>
-														<dt> 1.内表的清空</dt>
-														<dd>
+							    <dl>
+								    <dt> 1.内表的清空</dt>
+								    <dd>
                                                         
-                                   <pre><code>
-                                    对内表数据的清空共包括4种模式
-
-      CLEAR <ITAB>：仅清空HEADER LINE，对内表数据存储空间不影响。
-
-      REFRESH <ITAB>：清空内表数据存储空间，对HEADER LINE不影响。
-
-      REFRESH <itab> FROM TABLE <dbtab>：清空内表存储空间，填充从数据库表所获数据。
-
-      FREE <ITAB>：清空内表数据存储空间，对HEADER LINE不影响。
-       </code>
-                                    </pre>
-                                    </dd>
+                                   <p>
+                                    对内表数据的清空共包括4种模式<br/>
+      CLEAR <ITAB>：仅清空HEADER LINE，对内表数据存储空间不影响。<br/>
+      REFRESH <ITAB>：清空内表数据存储空间，对HEADER LINE不影响。<br/>
+      REFRESH <itab> FROM TABLE <dbtab>：清空内表存储空间，填充从数据库表所获数据。<br/>
+      FREE <ITAB>：清空内表数据存储空间，对HEADER LINE不影响。<br/>
+       
+                                    </p>
+                                  </dd>
                                     
                                     
-                                    <dt>  2.INSERT（向内表插入数据）</dt>
-														<dd>
-                                                        
-                                                         </dd>
+                                  <dt>  2.INSERT（向内表插入数据）</dt>
+								    <dd>
+                                      段落
+                                     </dd>
                                     
                                     
                                     
                                     
                                     
-                                       <dt> 3.MODIFY(直接修改内表数据)</dt>
-														<dd>
-                                                        段落
-                                                         </dd>
-                                      <dt> 4.COLLECT（内表数据分类汇总）</dt>
-														<dd>
-                                                        将内表中相同的字段合并，若有类型为I的字段，则将其值加总。
+                                  <dt> 3.MODIFY(直接修改内表数据)</dt>
+								    <dd>
+                                      段落
+                                     </dd>
+                                  <dt> 4.COLLECT（内表数据分类汇总）</dt>
+								    <dd>
+                                      将内表中相同的字段合并，若有类型为I的字段，则将其值加总。
 
-        COLLECT [wa INTO] itab.
-                                                         </dd>
+COLLECT [wa INTO] itab.
+                                     </dd>
                                     
-                                       <dt>  5.SORT（内表数据排序）</dt>
-														<dd>
-                                                        段落
-                                                         </dd>
-                                   
-                                    <dt>   6.READ(读取)</dt>
-														<dd>
-                                                        段落
-                                                         </dd>
-                                   
-                                   
-                                       <dt>   7.LOOP....ENDLOOP（循环读取内表数据）</dt>
-														<dd>
-                                                        段落
-                                                         </dd>
-                                    
-                                   
-                                   
-                                  
-                                    
-                                    
-                                    </dl>
+                                  <dt>  5.SORT（内表数据排序）</dt>
+								    <dd>
+                                      段落
+                                     </dd> 
+                                  <dt>   6.READ(读取)</dt>
+								    <dd>
+                                      <ol>
+                                      <li>标准表：顺序搜索，查找时间会随着条目的增加而线性增加</li>
+                                      <li>排序表：二分查找，查找时间会随着条目的增加而对数级增加</li>
+                                      <li>哈希表：使用哈希算法进行查询，查找时间不依赖于条目数</li>
+                                      </ol>
+                                     </dd> 
+                                  <dt>   7.LOOP....ENDLOOP（循环读取内表数据）</dt>
+								    <dd>
+                                      段落
+                                     </dd>
+                                  <dt>   8.AT...ENDAT（设置内表循环触发条件）</dt>
+								    <dd>
+                                      段落
+                                     </dd> 
+                                                         
+                                  <dt>   9.AT..DELETE（删除内表数据）</dt>
+								    <dd>
+                                      段落
+                                     </dd> 
+                                                         
+                                  <dt> 10.DESCRIBE（获取内表的具体属性）</dt>
+								    <dd>
+                                      段落
+                                     </dd> 
+                                                 
+                </dl>
 
-									<hr class="major" />
+			    <hr class="major" />
 
-									<h2>1.内表的定义</h2>
-                                    <p>段落</p>
-
-
+			    <h2>1.内表的定义</h2>
+                <p>段落</p>
 
 
 
-								</section>
 
-						</div>
+
+	        </section>
+
+	  </div>
 					</div>
 
 				<!-- Sidebar -->
