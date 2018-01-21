@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>KIX</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>KIX</strong> 软件集成</a>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+	    <!-- Content -->
+		    <section>
+			    <header class="main">
+				    <h1>数据库—更新数据</h1>
+		        </header> 
+			    
+				<p>
+                Open SQL中使用INSERT、UPDATE、MODIFY和DELETE语句进行数据的更新操作，其中当SY-DBCNT返回为0，则表示操作成功，此外还将返回实际操作的数据行数。需要指明的是Open SQL本身并不进行操作权限的检查，若需要进行设定，则要在系统中创建授权对象。
+                </p>
+									
+
+								 
+			    <hr class="major" />
+
+			    <h2>一.INSERT语句</h2>
+			    <p> 
+                                    
+                    Open SQL中的INSERT语句用于向数据库中插入新条目。<br/>
+1.插入单行数据：<br/>
+INSERT INTO dbtab VALUES wa.<br/>
+ INSERT INTO dbtab FROM wa.<br/>
+ wa为工作区，是与数据库具有相同结构的数据对象，一般直接基于数据库结构声明。该语句也可以将数据插入视图中，首先该视图所有字段必须来自同一个数据库表，而且在数据字典中的maintenance status属性必须设定为read and change <br/>
+注：如果相同表关键字的数据条目已经存在，则不能重新插入，只能对非关键字进行更改(UPDATE，MODIFY)
+<br/><br/>
+
+2.插入多行数据<br/>
+INSERT dbtab FROM TABLES itab.<br/>
+其中itab是内表，包含希望插入的数据条目。<br/>
+ 注：内表应与数据库的行结构一致。<br/>
+ 所有条目成功插入，则SY-SUBRC返回0<br/>
+使用ACCEPTING DUPLICATE可避免该错误。<br/>
+INSERT dbtab FROM TABLE itab ACCEPTING DUPLICATE KEYS. <br/>
+ ACCEPTING DUPLICATE的效果是：若出现关键字相同，返回4，并跳过其再更新所有的其他。
+                                     
+                </p>
+                                    
+                                    
+			    <hr class="major" />
+
+			    <h2>二.UPDATE语句</h2>
+                <p>
+                1.更新单行数据：<br/>
+UPDATE dbtab SET f1=g1 ... fn=gn WHERE .<br/>
+ f表组建字段名，g为新设定的值，WHERE为确保只更新单行。<br/>
+ 注：除f=g外还可 f=f+g、f=f-g<br/>
+通过工作区更改单行数据：<br/>
+UPDATE dbtab FROM wa. <br/><br/>
+ 2.更新多行数据：<br/>
+UPDATE dbtab SET f1=g1 ... fi=gi [WHERE ].<br/>
+也可以使用SET和WHERE子句同时更新多行数据值；此外不需要在WHERE中限定所有表关键字，该语句本身将更新所有满足条件的数据条目，若不是用WHERE子句，则将更新当前数据集团中的所有数据行。<br/>
+ 注：如果至少有一行数据被更新SY-BUBRC返回0，否则返回4。<br/>
+ 还可通过内表来更新多行数据：<br/>
+UPDATE target FROM TABLE itab.
+                
+                </p>
+                <hr class="major" />
+
+			    <h2>三.MODIFY语句</h2>
+                
+                <p>
+                MODIFY语句是SAP的Open SQL中专有语句，该语句相当于INSERT和UPDATE语句的结合。<br/>
+                引入期的原因是当更新数据库操作时，并不确知数据库中是否遗憾相应的数据行。<br/>
+1.添加或更新单行：<br/>
+MODIFY dbtab FROM wa.<br/>
+注：操作后SY-SUBRC恒为0；SY-DBCNT为1<br/><br/>
+ 2.添加或更新多行：<br/>
+MODIFY dbtab FROM TABLE itab.<br/>
+内表itab将覆盖数据库表中具有相同主关键字的条目。<br/>
+ 注：SY-SUBRC恒为0；SY-DBCNT返回行数<br/>
+                
+                </p>
+                
+                <hr class="major" />
+
+			    <h2>四.DELETE语句</h2>
+              <p>
+                                 
+                                 1.删除单行数据：<br/>
+DELETE FROM dbtab WHERE .<br/>
+或 DELETE dbtab FROM wa.<br/>
+其中WHERE必须指明全部表关键字段的值；wa为工作区，若不去dbtab匹配操作将失败。<br/><br/>
+2.删除多行数据：<br/>
+DELETE FROM dbtab WHERE .<br/>
+ DELETE dbtab[CLIENT SPECIFIED] FROM TABLE itab.<br/>
+注：返回值同MODIFY<br/>
+ 3.删除多行数据：<br/>
+ 两种形式：<br/>
+ 1).通过内表删除多行数据条目的过程中将内表置为空；<br/>
+ 2).使用WHERE FIELD LIKE '%'。
+                                 
+                                 </p> 
+                                  
+                                  
+                                  <span>转载：ABAP数据库—更新数据   </span>
+							   
+
+			                      <hr class="major" />
+
+
+
+
+
+	        </section>
+
+	  </div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									 
+								</nav>
+
+							 
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>该网站仅用于学习交流，不作任何商业用途，可以通过邮件方式联系，交流.</p>
+									<ul class="contact">
+										<li class="fa-envelope-o"><a href="#">liangqihua21@21cn.com</a></li>
+										<li class="fa-phone">(000) 000-0000</li>
+										<li class="fa-home">  Somewhere Road #0757<br />
+										广东省, 佛山市三水区</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; KXI. All rights reserved. 仅供学习交流.  </p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
