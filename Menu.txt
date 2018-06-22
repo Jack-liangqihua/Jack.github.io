@@ -12,7 +12,16 @@
 												<li><a href="#">采购订单</a></li>
 												<li><a href="#">请假审批</a></li>
 											</ul>
-										</li>								
+										</li>
+										<li>	
+											<span class="opener">报表平台</span>
+											<ul>
+												<li><a href="Report_Build.html">系统构架</a></li> 
+												<li><a href="#">软件设计</a></li> 
+												<li><a href="#">项目管理</a></li> 
+												
+											</ul>
+										</li>										
 										<li>
 											<span class="opener">SAP技术分享</span>
 											<ul>
