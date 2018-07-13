@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>登录页面</title>
+<link rel="stylesheet"  href="/js/bootstrap/bootstrap.min.css"/>
+
+<style type="text/css">
+	body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+	
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">说明</a>
+        </div> 
+      </div>
+    </nav>
+     <div class="container">
+
+      <div class="starter-template">
+         
+			<h2>使用账号密码登录</h2>
+			<form name="form" > <!-- 3 -->
+				<div class="form-group">
+					<label for="username">账号</label>
+					<input type="text" class="form-control" name="username" id="username" value="" placeholder="账号" />
+				</div>
+				<div class="form-group">
+					<label for="password">密码</label>
+					<input type="password" class="form-control" name="password" id="password" placeholder="密码" />
+				</div>
+				<input type="BUTTON" id="login" value="Login" class="btn btn-primary" />
+			</form>
+      </div> 
+
+    </div>
+		 	
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/js/jquery-easyui/jQuery.blockUI.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	
+	  $("#login").click(function(){
+		  var json_data={   
+		            "username":document.getElementById("username").value,
+		            "password":document.getElementById("password").value 
+		            //"time":new Date().getTime()
+		         }; 
+			console.log(json_data);
+		  $.blockUI({ message: '<h4> login...</h4>' });
+		  $.ajax({ 
+			    async:false,//默认是true ,异步执行
+		    	url:"http://172.17.10.226:8181/7a1a587c64afc68bbd563e1a4c6c4a53/22b4cc511612bb9335c1d16da378a36c",
+		    	type: "POST",
+		    	data : JSON.stringify(json_data),
+		    	contentType : 'application/json;charset=utf-8' ,
+		      success: function(data, status, xhr) {
+		        console.log(data);
+		        if(data!=null){ 
+		        	window.location.href=data.etraInfo;
+		        	
+		        }
+		       
+		      }
+		     }); 
+		  $.unblockUI(); 		  
+	  });
+	});
+</script>
+</body>
+</html>

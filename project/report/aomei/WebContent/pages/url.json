@@ -1,0 +1,98 @@
+{
+    "url": [
+        {
+        	"id":1,
+            "container": 1,
+            "menu": "门户",
+            "menu_class": "fa fa-dashboard",
+            "list": [
+                {	
+        			"id":"1.1",
+                    "href": "/aomei/WebContent/index.html",
+                    "src":"",
+                    "href_name": "管理者驾驶舱"
+                }
+            ]
+        },
+        {
+        	"id":2,
+            "container": 2,
+            "menu": "财务部门",
+            "menu_class": "fa fa-files-o",
+            "list": [
+                {
+        			"id":"2.1",
+                    "href": "/aomei/WebContent/pages/fixed.html",
+                    "src":"http://172.17.10.226:8080/aomei/WebContent/FI/day.jsp",
+                    "href_name": "2000公司应收款项"
+                },
+                {
+        			"id":"2.2",
+                    "href": "#",
+                    "src":"",
+                    "href_name": "待定"
+                }
+            ] 
+        },
+        {
+        	"id":3,
+            "container": 2,
+            "menu": "销售部门",
+            "menu_class": "fa fa-files-o",
+            "list": [
+                {
+        			"id":"3.1",
+                    "href": "#",
+                    "src":"",
+                    "href_name": "待定"
+                },
+                {
+        			"id":"3.2",
+                    "href": "#",
+                    "src":"",
+                    "href_name": "待定"
+                }
+            ] 
+        },
+        {
+        	"id":4,
+            "container": 2,
+            "menu": "生产部门",
+            "menu_class": "fa fa-files-o",
+            "list": [
+                {
+        			"id":"4.1",
+                    "href": "#",
+                    "src":"",
+                    "href_name": "待定"
+                },
+                {
+        			"id":"4.2",
+                    "href": "#",
+                    "src":"",
+                    "href_name": "待定"
+                }
+            ] 
+        },
+        {
+        	"id":5,
+            "container": 2,
+            "menu": "采购部门",
+            "menu_class": "fa fa-files-o",
+            "list": [
+                {
+        			"id":"5.1",
+                    "href": "#",
+                    "src":"",
+                    "href_name": "待定"
+                },
+                {
+        			"id":"5.2",
+                    "href": "#",
+                    "src":"",
+                    "href_name": "待定"
+                }
+            ] 
+        }
+    ]
+}
