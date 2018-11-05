@@ -28,6 +28,7 @@
 												<li><a href="basis.html">系统基础知识</a></li> 
 												<li><a href="Tcode.html">常用事务码</a></li> 
 												<li><a href="usefullFunction.html">常用函数</a></li> 
+												<li><a href="SAP_tech_1.html">DD07V 获取域配置选项</a></li> 
 												
 											</ul>
 										</li>
