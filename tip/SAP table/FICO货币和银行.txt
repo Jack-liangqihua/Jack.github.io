@@ -1,0 +1,13 @@
+货币：
+TCURC  货币代码
+TCURT  货币代码名
+TCURV  货币换算的兑换率类型
+TCURR  汇率
+TCURW  汇率类型的使用
+TCURF  转换因子
+
+银行：
+BNKA  银行主数据
+T012  开户行
+T012T 开户行帐户名
+NBNK  银行的号码范围

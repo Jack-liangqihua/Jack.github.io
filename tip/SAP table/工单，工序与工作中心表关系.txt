@@ -1,0 +1,14 @@
+工单，工序与工作中心表关系
+
+
+
+
+生产工单表：AFKO
+
+生产工单工序表：AFVC
+
+工作中心表：CRHD
+
+生产工单与工序表关系为：  AFKO-AUFPL = AFVC-AUFPL
+
+工序与工作中心关系为：AFVC-ARBID = CRHD-OBJID
