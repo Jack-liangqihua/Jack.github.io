@@ -1,0 +1,129 @@
+*&---------------------------------------------------------------------*
+*& Report Y_FILE_DOWNLOAD
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT Y_FILE_DOWNLOAD.
+
+
+
+DATA : LV_FILENAME TYPE  STRING,
+       LV_PATH     TYPE  STRING,
+       LV_FULLPATH TYPE  STRING.
+
+
+TYPES : BEGIN OF GTY_DATA,
+          F1 TYPE STRING,
+          F2 TYPE STRING,
+        END OF GTY_DATA.
+
+DATA :GS_DATA TYPE GTY_DATA,
+      GT_DATA TYPE STANDARD TABLE OF GTY_DATA.
+
+
+
+INITIALIZATION.
+
+  CLEAR GS_DATA.
+  GS_DATA-F1 = '1'.
+  GS_DATA-F2 = '2'.
+  APPEND GS_DATA TO GT_DATA.
+
+
+START-OF-SELECTION.
+
+
+
+
+END-OF-SELECTION.
+
+
+
+
+  CALL METHOD CL_GUI_FRONTEND_SERVICES=>FILE_SAVE_DIALOG
+    EXPORTING
+      WINDOW_TITLE              = '保存文件'
+*     DEFAULT_EXTENSION         =
+      DEFAULT_FILE_NAME         = '下载文件.xls'
+*     WITH_ENCODING             =
+*     FILE_FILTER               =
+*     INITIAL_DIRECTORY         =
+*     PROMPT_ON_OVERWRITE       = 'X'
+    CHANGING
+      FILENAME                  = LV_FILENAME
+      PATH                      = LV_PATH
+      FULLPATH                  = LV_FULLPATH
+*     USER_ACTION               =
+*     FILE_ENCODING             =
+    EXCEPTIONS
+      CNTL_ERROR                = 1
+      ERROR_NO_GUI              = 2
+      NOT_SUPPORTED_BY_GUI      = 3
+      INVALID_DEFAULT_FILE_NAME = 4
+      OTHERS                    = 5.
+  IF SY-SUBRC <> 0.
+* Implement suitable error handling here
+  ENDIF.
+
+
+
+  CALL METHOD CL_GUI_FRONTEND_SERVICES=>GUI_DOWNLOAD
+    EXPORTING
+*     BIN_FILESIZE            =
+      FILENAME                = LV_FULLPATH
+      FILETYPE                = 'DAT'
+*     APPEND                  = SPACE
+*     WRITE_FIELD_SEPARATOR   = SPACE
+*     HEADER                  = '00'
+*     TRUNC_TRAILING_BLANKS   = SPACE
+*     WRITE_LF                = 'X'
+*     COL_SELECT              = SPACE
+*     COL_SELECT_MASK         = SPACE
+      DAT_MODE                = 'X'
+*     CONFIRM_OVERWRITE       = SPACE
+*     NO_AUTH_CHECK           = SPACE
+*     CODEPAGE                = SPACE
+*     IGNORE_CERR             = ABAP_TRUE
+*     REPLACEMENT             = '#'
+*     WRITE_BOM               = SPACE
+*     TRUNC_TRAILING_BLANKS_EOL = 'X'
+*     WK1_N_FORMAT            = SPACE
+*     WK1_N_SIZE              = SPACE
+*     WK1_T_FORMAT            = SPACE
+*     WK1_T_SIZE              = SPACE
+*     SHOW_TRANSFER_STATUS    = 'X'
+*     FIELDNAMES              =
+*     WRITE_LF_AFTER_LAST_LINE  = 'X'
+*     VIRUS_SCAN_PROFILE      = '/SCET/GUI_DOWNLOAD'
+*  IMPORTING
+*     FILELENGTH              =
+    CHANGING
+      DATA_TAB                = GT_DATA[]
+    EXCEPTIONS
+      FILE_WRITE_ERROR        = 1
+      NO_BATCH                = 2
+      GUI_REFUSE_FILETRANSFER = 3
+      INVALID_TYPE            = 4
+      NO_AUTHORITY            = 5
+      UNKNOWN_ERROR           = 6
+      HEADER_NOT_ALLOWED      = 7
+      SEPARATOR_NOT_ALLOWED   = 8
+      FILESIZE_NOT_ALLOWED    = 9
+      HEADER_TOO_LONG         = 10
+      DP_ERROR_CREATE         = 11
+      DP_ERROR_SEND           = 12
+      DP_ERROR_WRITE          = 13
+      UNKNOWN_DP_ERROR        = 14
+      ACCESS_DENIED           = 15
+      DP_OUT_OF_MEMORY        = 16
+      DISK_FULL               = 17
+      DP_TIMEOUT              = 18
+      FILE_NOT_FOUND          = 19
+      DATAPROVIDER_EXCEPTION  = 20
+      CONTROL_FLUSH_ERROR     = 21
+      NOT_SUPPORTED_BY_GUI    = 22
+      ERROR_NO_GUI            = 23
+      OTHERS                  = 24.
+  IF SY-SUBRC <> 0.
+* Implement suitable error handling here
+  ENDIF.
