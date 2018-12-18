@@ -1,0 +1,124 @@
+一、MM常用表
+1、MARA: 常规物料数据 
+2、MARC: 物料的工厂数据 
+3、MAKT: 物料描述 
+4、MARD: 物料的工厂/库存地点数据 
+5、MBEW: 物料评估（财务数据），其中MBEW-WERKS指工厂 
+6、MVKE: 物料销售数据 
+7、MLGN: 每一个仓库号物料数据（仓库） 
+8、MLGT: 每一个存储类型的物料数据（仓库/存储类型） 
+8.1、MSTA：物料主记录状态 
+9、LFA1: 供应商主数据（一般数据） 
+10、LFB1: 供应商主数据（公司代码） 
+11、LFM1: 供应商采购组织数据 
+12、EINA: 采购信息记录（一般数据） 
+13、EINE: 采购信息记录（采购组织数据） 
+14、EKKO: 采购订单抬头 
+15、EKPO: 采购订单行项目 
+16、EKET: 计划协议计划行 
+17、EKKN: 采购凭证中的帐户设置 
+18、EKBE: 采购凭证历史 
+19、MKPF: 物料凭证抬头 
+20、MSEG: 物料凭证行项目 
+21、RBKP: 凭证抬头供应商发票数据 
+22、RSEG: 凭证项目供应商发票数据 
+EKKO/EKPO–>MKPF/MSEG–>RBKP/RSEG–>BKPF-BSEG 
+23、KNA1: 客户主数据（一般数据） 
+24、KNB1: 客户主数据（公司代码） 
+25、KNVV: 客户主记录销售数据 
+26、ADRC: 地址 
+27、EBAN: 采购申请
+
+二、SD常用表
+1、VBAK: 销售凭证：抬头数据 
+2、VBAP: 销售凭证：项目数据 
+3、VBEP: 销售凭证：计划行数据 
+4、VBKD: 销售凭证：业务数据 
+5、VBPA: 销售凭证：合作伙伴 
+6、LIKP: SD凭证：交货抬头数据 
+7、LIPS: SD凭证：交货项目数据 
+8、VBRK: 出具发票：抬头数据 
+9、VBRP: 出具发票：项目数据 
+10、VBFA: 销售凭证流 
+11、VBUK: 销售凭证：抬头状态和管理数据 
+12、VBUP: 销售凭证 ： 项目状态 
+13、T682I: 条件：存取顺序( 产生格式 ) 
+14、T681: 条件：结构 
+15、T682Z: 条件：存取顺序( 字段 ) 
+16、T685: 条件:类型
+
+三、FICO常用表
+1、SKA1: 总帐科目主记录 (科目表) 
+2、SKB1: 总帐科目主记录 (公司代码) 
+3、SKAT: 总帐科目主记录（描述） 
+4、CSKB: 成本要素 
+5、BKPF: 会计凭证抬头 
+6、BSEG: 会计核算凭证项目数据，BSID客户未清会计核算凭证/BSAD客户已清会计核算凭证/BSIK供应商未清会计核算凭证/BSAK供应商已清会计核算凭证/BSIS总帐未清会计核算凭证/BSAS总帐已清会计核算凭证 
+7、FAGLFLEXA: 总账实际行项目 
+8、FAGLFLEXT: 总账汇总 
+9、ANLA: 资产主记录段 
+10、ANLC: 资产值字段 
+11、CSKS: 成本中心主数据 
+12、COEP: 成本控制对象：与期间相关的各行项目 
+13、COSS: CO 对象:内部过帐成本总计 
+14、COSP: CO 对象：外部记帐的成本总计 
+15、 CKMLPRKEKO: 物料分类帐; 价格的成本组件分割 (标题) 
+16、CKMLPRKEPH: 物料分类帐: 价格的成本组件分割 (要素0
+
+四、PP常用表
+1、MAST：BOM链接物料 
+2、STKO：BOM表头 
+3、STAS：BOMs - 项选择 
+4、STPO：BOM项目 
+STKO~STLAN = STAS-STLAN AND STKO~STLAL = STAS-STLAL 
+STAS~STLNR = STPO-STLNR AND STAS~STLKN = STAS-STLKN 
+BOM类别包括：D-凭证结构、E-设备BOM、K-订单BOM、M-物料BOM、S-标准BOM、T-功能位置BOM、P-工作分解结构BOM 
+5、PLAF: 计划订单 
+6、RKPF: 预定/相关需求抬头 
+7、RESB: 预定/相关需求行项目 
+8、AUFK: 订单主数据 
+9、AFKO: 订单表头数据，PP订单 
+10、AFPO: 订单项 
+11、AFVC: 订单的工序 
+12、AFVV: 工序中数量/日期/值的DB结构 
+13、JEST: 订单状态，通过AUFK-OBJNR=JEST-OBJNR关联 
+14、AFRU: 订单确认 
+15、AUFM: 针对订单的货物移动
+
+五、PM常用表
+1、IFLOT: 功能位置(表) 
+2、ILOA: PM 对象位置和帐户分配
+
+六、PS常用表
+1、PROJ: 项目定义 
+2、PRPS: WBS(工作中断结构) 元素主数据
+
+七、QM常用表
+八、库存数据
+1、MBEW: 物料评估 
+2、MARD: 物料的工厂/库存地点数据 
+3、MSLB: 供应商特殊库存（O） 
+4、MKOL: 供应商特殊库存（K） 
+5、MSKA: 销售订单库存 
+6、MCH1/ MCHB: 批次库存
+
+九、货物移动数据
+1、MKPF: 物料凭证抬头 
+2、MSEG: 物料凭证行项目 
+不是所有的物料移动数据都需要从这物料移动表中进行读取，生产订单相关AUFM，采购订单相关EKBE，销售相关VBFA。
+
+十、WM常用表
+1、LTBK: 转储请求抬头 
+2、LTBP: 转储请求项目 
+3、LTAK: WM转储单抬头 
+4、LTAP: WM转储单项目
+
+十一、销售价格、采购价格
+KONV: 价格数据 
+销售价格：通过条件记录号KONV-KNUMV=VBAK-KNUMV关联 
+采购价格:：通过条件记录号KONV-KNUMV=EKKO-KNUMV关联
+--------------------- 
+作者：湖东 
+来源：CSDN 
+原文：https://blog.csdn.net/linmingqiang506/article/details/80587536 
+版权声明：本文为博主原创文章，转载请附上博文链接！
