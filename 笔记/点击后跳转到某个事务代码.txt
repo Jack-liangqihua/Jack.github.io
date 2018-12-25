@@ -1,0 +1,5 @@
+ 
+    WHEN '&IC1'.
+       
+    SET PARAMETER ID 'AUN' FIELD gt_output-vbeln.
+    CALL TRANSACTION 'VA03' AND SKIP FIRST SCREEN.
