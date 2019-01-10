@@ -23,7 +23,7 @@
 											</ul>
 										</li>										
 										<li>
-											<span class="opener">SAP技术分享</span>
+											<span class="opener">SAP笔记</span>
 											<ul>
 												<li><a href="basis.html">系统基础知识</a></li> 
 												<li><a href="Tcode.html">常用事务码</a></li> 
