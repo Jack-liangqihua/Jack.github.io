@@ -16,6 +16,7 @@
      var reg = new RegExp("(^|&)"+ "ID" +"=([^&]*)(&|$)");
      var r = window.location.search.substr(1).match(reg);
 	 var flag = unescape(r[2]);
+	 window.alert(flag);
      switch (flag)
 	 {
 		 case '1000001':
