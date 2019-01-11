@@ -10,6 +10,12 @@
  var htmlobj=$.ajax({url:"Menu.txt",async:false});
   $("#menu").html(htmlobj.responseText);
   
+  //中间内容
+  htmlobj=$.ajax({url:"content/index.txt",async:false});
+  $("#banner").html(htmlobj.responseText);
+  
+  
+  
 //搜索
 $("#query").bind('input propertychange', function() {
 	var qv =  $("#query").val(); 
