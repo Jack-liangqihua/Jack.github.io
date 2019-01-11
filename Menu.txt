@@ -6,7 +6,7 @@
 										<li>
 											<span class="opener">SAP集成方案</span>
 											<ul>
-												<li><a href="EXTRACT_TABLE_DATA.html">通用查询接口</a></li>
+												<li><a href="index.html?ID=1000001">通用查询接口</a></li>
 												<li><a href="#">费用报销</a></li>
 												<li><a href="#">销售订单</a></li>
 												<li><a href="#">采购订单</a></li>

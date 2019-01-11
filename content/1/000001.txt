@@ -1,0 +1,187 @@
+
+									<header class="main">
+										<h1>通用查询接口</h1>
+									</header>
+								  <p>
+                                  SAP做外围系统集成的时候，很多数据需要做同步，或者做查询用，那么，这个时候如果每一个功能或者数据来源都做成接口，是非常浪费时间，而且运维成本就变得非常昂贵了。举个例子，我们集成OA做销售订单审批：物料主数据需要查询，客户主数据需要查询……我们是做多个接口去分别查询这些数据还是做一个通用的接口去查询数据呢？答案显而易见！我们没必要做多个查询接口，应该从减少开发，减少维护的原则进行外围系统的集成。
+                                  <br/> <br/>
+                                  通过通用查询接口，我们利用透明表，传入opensql语句，动态的查询结果。然后通过外围系统调用SAP接口，把数据返回。
+                                  <br/> <br/>
+                                  
+                                  开发人员需要掌握SAP RFC 、Java JCO 、ABAP开发。
+                                  
+                                  </p>
+                                  <h2>1、输入参数</h2>
+                                  <p>
+                                  
+                                  <table class="alt">
+															<thead>
+																<tr>
+																	<th>参数名称</th>
+																	<th>类型化</th>
+																	<th>关联类型</th>
+																</tr>
+															</thead>
+															<tbody>
+                                                            
+                                                            <tr> <td>	FIELDS	</td><td>	LIKE	</td><td>	ZSQL_CLAUSE_ELEMENTS	</td></tr>
+<tr> <td>	FROMCLAUSE	</td><td>	LIKE	</td><td>	ZSQL_CLAUSE_ELEMENTS	</td></tr>
+<tr> <td>	WHERECLAUSE	</td><td>	LIKE	</td><td>	ZSQL_CLAUSE_ELEMENTS	</td></tr>
+<tr> <td>	DATA	</td><td>	LIKE	</td><td>	ZTABLEROWS	</td></tr>
+
+                                                            
+                                                            
+                                                            </tbody>
+															 
+														</table>
+                                                        
+                                                        <strong>ZSQL_CLAUSE_ELEMENTS</strong> 结构包含字段  SO_TEXT072	，其类型	SO_TEXT072 
+                                                        
+                                                        <strong>ZTABLEROWS</strong> 结构包含字段CHAR2000	，其类型	CHAR2000 <br/> <br/> <br/>
+                                                        
+                                                        
+                                                        用于输入的表如下：<br/>
+FIELDS:这个表,包含应该按有效的 Open SQL 表示法返回的字段。每行一个完全限定的字段，包括表名。例如 PA0002~PERNR。<br/>
+FROMCLAUSE:动态 SQL 查询的 FROM 子句，分割为 72 个字符的片段。 <br/>
+WHERECLAUSE:动态 SQL 查询的 WHERE 子句，分割为 72 个字符的片段。 <br/>
+用于输出的表是：<br/>
+DATA这个表包含选择的字段的字符串形式，由分隔符 | 分隔。
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <pre>
+                                                        <code>
+                                                        
+FUNCTION ZEXTRACT_TABLE_DATA.
+*"----------------------------------------------------------------------
+*"*"本地接口：
+*"  TABLES
+*"      FIELDS STRUCTURE  ZSQL_CLAUSE_ELEMENTS
+*"      FROMCLAUSE STRUCTURE  ZSQL_CLAUSE_ELEMENTS
+*"      WHERECLAUSE STRUCTURE  ZSQL_CLAUSE_ELEMENTS
+*"      DATA STRUCTURE  ZTABLEROWS
+*"----------------------------------------------------------------------
+  TYPE-POOLS: ABAP.
+  DATA:
+    COLUMNNAME        TYPE SO_TEXT,
+    FIELDDATADESCRREF TYPE REF TO ABAP_COMPONENTDESCR,
+    NUMBERFIELDS      TYPE I,
+    FIELDDESCR        TYPE ABAP_COMPONENTDESCR,
+    FIELDNAME         TYPE STRING,
+    FIELDDESCRTAB     TYPE ABAP_COMPONENT_TAB,
+    ROWSTRUCTDESCR    TYPE REF TO CL_ABAP_STRUCTDESCR,
+    ROWREFERENCE      TYPE REF TO DATA,
+    RETURNROWSTRING   TYPE STRING,
+    DATAFIELDSTRING   TYPE STRING,
+    DATALINE          LIKE DATA,
+    FROMCLAUSEROW     TYPE ZALBUS_STRUCT_WHERECLAUSE,
+    FROMCLAUSESTRING  TYPE STRING,
+    WHERECLAUSEROW    TYPE ZALBUS_STRUCT_WHERECLAUSE,
+    WHERECLAUSESTRING TYPE STRING,
+    FIELDSROW         TYPE ZALBUS_STRUCT_WHERECLAUSE.
+  FIELD-SYMBOLS:
+    <DATAROW>   TYPE ANY,
+    <DATAFIELD> TYPE ANY.
+
+
+* CREATE DataStructure with field names
+* Datatypes are read from fieldnames of FIELDS input table
+  DESCRIBE TABLE FIELDS LINES NUMBERFIELDS.
+  LOOP AT FIELDS INTO FIELDSROW.
+    FIELDNAME = SY-TABIX.
+* names need to be unique and must start with a char
+    CONCATENATE 'string' FIELDNAME INTO FIELDNAME.
+    CONDENSE FIELDNAME.
+    FIELDDESCR-NAME = FIELDNAME.
+* for dictionary lookup we need to change columnnames from Open SQL
+* to dictionary notation
+    COLUMNNAME = FIELDSROW-TEXT.
+    REPLACE FIRST OCCURRENCE OF SUBSTRING '~' IN COLUMNNAME WITH '-' RESPECTING CASE.
+
+    FIELDDESCR-TYPE ?= CL_ABAP_TYPEDESCR=>DESCRIBE_BY_NAME( COLUMNNAME ).
+    APPEND FIELDDESCR TO FIELDDESCRTAB.
+  ENDLOOP.
+
+  ROWSTRUCTDESCR = CL_ABAP_STRUCTDESCR=>CREATE( FIELDDESCRTAB ).
+
+* now we create the actual data structure in memory
+  CREATE DATA ROWREFERENCE TYPE HANDLE ROWSTRUCTDESCR.
+* finally we assign it to the Field-symbol used by the select statement
+  ASSIGN ROWREFERENCE->* TO <DATAROW>.
+* End Create DataStructure
+
+* to simplify calls we concatenate from and whereclause into strings
+* this way caller doesn't need to check word wrappings
+  FROMCLAUSESTRING = ''.
+  LOOP AT FROMCLAUSE INTO FROMCLAUSEROW.
+    CONCATENATE FROMCLAUSESTRING FROMCLAUSEROW-TEXT INTO FROMCLAUSESTRING.
+  ENDLOOP.
+
+  WHERECLAUSESTRING = ''.
+  LOOP AT WHERECLAUSE INTO WHERECLAUSEROW.
+    CONCATENATE WHERECLAUSESTRING WHERECLAUSEROW-TEXT INTO WHERECLAUSESTRING.
+  ENDLOOP.
+
+* Now start actual select operation
+  SELECT (FIELDS) FROM (FROMCLAUSESTRING) INTO <DATAROW> WHERE (WHERECLAUSESTRING).
+* we read all fields of the current row, cast it to string and
+* concatenate it into a dataline with division chars.
+    CLEAR: RETURNROWSTRING.
+    DO NUMBERFIELDS TIMES.
+      ASSIGN COMPONENT SY-INDEX OF STRUCTURE <DATAROW> TO <DATAFIELD>.
+      DATAFIELDSTRING = <DATAFIELD>.
+      CONCATENATE RETURNROWSTRING '|' DATAFIELDSTRING INTO RETURNROWSTRING.
+    ENDDO.
+    DATALINE = RETURNROWSTRING.
+* finally dataline is added to the return table.
+    INSERT DATALINE INTO TABLE DATA.
+  ENDSELECT.
+
+ENDFUNCTION.
+                                                        
+                                                        </code>
+                                                        </pre>
+                                  
+                                  </p>
+									
+						      <hr class="major" />
+
+									<h2>2、Java调用</h2>
+									<p>
+                                    Java 可以通过RFC调用SAP接口，具体可以参考一下JCO调用SAP RFC接口。需要传入传入参数为：查询字段，表连接关系，where条件。下面是一个例子查询参数的例子。
+                                    
+                                  <pre>
+                                    	<code>
+                                        
+static String[] selectClause = {
+    "pa0003~pernr",      // master record: personnel number
+    "pa0002~vorna",      // address information: first name
+    "pa0002~nachn",      // address information: last name
+    "t527x~orgtx"        // name of organizational unit
+ };
+  
+ static String[] fromClause   = {
+    "pa0003 AS employees",
+       " INNER JOIN pa0000 ON pa0003~pernr = pa0000~pernr",
+       " INNER JOIN pa0001 ON pa0003~pernr = pa0001~pernr",
+       " INNER JOIN pa0002 ON pa0003~pernr = pa0002~pernr",
+       " INNER JOIN t527x  ON pa0001~orgeh = t527x~orgeh",
+       " INNER JOIN t002   ON t527x~sprsl = t002~spras"
+ };
+  
+ static String[] whereClause  = {
+     "pa0000~stat2 >= '2' AND pa0000~endda > sy-datum", // active employees
+     " AND pa0001~endda > sy-datum",
+     " AND pa0002~endda > sy-datum",
+     " AND pa0003~mandt = '800'",
+     " AND pa0003~pernr >= '1000' AND pa0003~pernr <= '1100'",
+     " AND t002~laiso = 'EN'"          // ISO639 language code
+ };
+
+                                        </code>
+                                    </pre>
+                                    
+                                </p>
+
+									 

@@ -11,7 +11,24 @@
   $("#menu").html(htmlobj.responseText);
   
   //中间内容
-  htmlobj=$.ajax({url:"content/index.txt",async:false});
+  
+ 
+     var reg = new RegExp("(^|&)"+ "ID" +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+	 var flag = unescape(r[2]);
+     switch (flag)
+	 {
+		 case '1000001':
+		 htmlobj=$.ajax({url:"content/1/000001.txt",async:false});
+		 break;
+		 
+		 default:
+		   htmlobj=$.ajax({url:"content/index.txt",async:false});
+		 break;
+	 }
+ 
+  
+
   $("#banner").html(htmlobj.responseText);
   
   
