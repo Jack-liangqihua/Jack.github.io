@@ -20,3 +20,17 @@
 3、git diff temp                      比较本地仓库与下载的temp分支
 4、git merge temp                     合并temp分支到本地的master分支
 5、git branch -d temp                 删除temp分支
+
+
+
+---
+title: My Blog
+---
+
+{{ page.title }}
+
+{% for post in site.posts %}
+
+{{ post.date|date_to_string }} <a href='{{ site.baseurl }}{{ post.url }}'>{{ post.title }}</a>
+
+{% endfor %}
