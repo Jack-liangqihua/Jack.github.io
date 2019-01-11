@@ -12,7 +12,7 @@
   
   //中间内容
   
- 
+ /*
      var reg = new RegExp("(^|&)"+ "ID" +"=([^&]*)(&|$)");
      var r = window.location.search.substr(1).match(reg);
 	 var flag = unescape(r[2]);
@@ -27,10 +27,10 @@
 		   htmlobj=$.ajax({url:"content/index.txt",async:false});
 		 break;
 	 }
- 
+ */
   
-
-  $("#banner").html(htmlobj.responseText);
+	htmlobj=$.ajax({url:"content/index.txt",async:false});
+	$("#banner").html(htmlobj.responseText);
   
   
   
