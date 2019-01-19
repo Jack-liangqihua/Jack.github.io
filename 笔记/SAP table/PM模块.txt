@@ -1,0 +1,10 @@
+AUFK        订单主数据
+AFIH        维护订单表头
+PMCO        维护订单的成本结构
+PRPS    WBS(工作中断结构) 元素主数据
+BPJA        年总计的总计记录   成本控制对象
+T024I        维护计划员组
+EQUI        设备主数据
+V_EQUI        PM 技术对象（EQUI，功能位置）
+ANLC        资产值字段
+ANLB         折旧期限

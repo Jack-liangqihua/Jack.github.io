@@ -1,1 +1,0 @@
-SET  CURSOR          FIELD  'фад╩вж╤н'.
