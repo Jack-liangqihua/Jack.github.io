@@ -19,7 +19,7 @@
 分支合并后提交远程仓库
 git checkout master
 git merge --no-ff
-git push '名称' master . 
+git push 
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
