@@ -1,0 +1,52 @@
+1 Master data
+TKA01        Controlling areas
+TKA02        Controlling area assignment
+KEKO        Product-costing header
+KEPH        Cost components for cost of goods manuf.
+KALO        Costing objects
+KANZ        Sales order items - costing objects
+
+2 Cost center master data
+CSKS        Cost Center Master Data
+CSKT        Cost center texts
+CRCO    Assignment of Work Center to Cost Center
+
+3 Cost center accounting
+COSP        CO Object: Cost Totals for External Postings
+COEP        CO Object: Line Items (by Period)
+COBK        CO Object: Document header
+COST        CO Object: Price Totals
+
+
+成本中心会计常用报表
+S_ALR_87013611- 成本中心: 实际/计划/差异
+S_ALR_87013612- 范围: 成本中心
+S_ALR_87013613- 范围: 成本要素
+S_ALR_87013617- 范围:作业类型
+S_ALR_87013618- 范围:统计指标
+KSB1- 成本中心：实际行项目
+
+利润中心会计常用报表
+
+S_ALR_87013340- 利润中心组: 计划/实际/差异
+KE5Z- 利润中心: 实际行项目
+S_ALR_87013343- 利润中心:应收
+S_ALR_87013344- 利润中心:应付
+
+内部订单会计常用报表
+
+S_ALR_87012995- 清单: 订单
+S_ALR_87012994- 订单:当前期间/累计
+S_ALR_87012996- 清单:按成本要素的订单
+S_ALR_87012997- 清单:按订单的成本要素
+S_ALR_87013001/2/3- 订单：实际年度/季度/期间比较
+KOB1- 订单:实际行项目
+KOK5- 内部订单主数据索引
+KOSRLIST_OR- 结算规则
+S_ALR_87013127- 订单选择
+产品成本会计常用报表
+
+S_ALR_87013127- 订单选择
+S_P99_41000062- 价格和库存值
+S_ALR_87013180- 根据期间状态的商品
+CKM3- 商品价格分析
